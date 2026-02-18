@@ -1,0 +1,15 @@
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Server running on port 5001
+Password reset requested for: test_fp_hospital_2@example.com
+No SMTP config found. Using Ethereal (mock) email.
+Message sent: <1f55e6a1-8d0f-1764-b85e-3db5b6dc0ca3@carebridge.com>
+OTP SENT (DEBUG): 989451
+Preview URL: https://ethereal.email/message/aZS1IVTtY5iYrkfjaZS1KESUF0ht709rAAAAAW7OjetcEnJQRcrKTinZqAs
+Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+Password reset requested for: 7003634751
+Password reset requested for: vijayprithvi38@gmail.com
+Password reset requested for: vijayprithvi38@gmail.com
+Password reset requested for: vijayprithvi38@gmail.com
+Password reset requested for: vijayprithvi38@gmail.com
+Password reset requested for: vijayprithvi38@gmail.com
+Password reset requested for: vijayprithvi38@gmail.com

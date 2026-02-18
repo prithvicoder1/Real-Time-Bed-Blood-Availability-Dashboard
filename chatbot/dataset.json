@@ -1,0 +1,156 @@
+[
+    {
+        "intent": "greeting",
+        "utterances": [
+            "Hello",
+            "Hi",
+            "Hey there",
+            "Greetings",
+            "Good morning",
+            "Good afternoon",
+            "Is anyone there?",
+            "Yo",
+            "Whats up"
+        ],
+        "answers": [
+            "Hello! I am CareBridge AI, ready to assist you with hospital resources.",
+            "Hi there! How can I help you find medical support today?",
+            "Greetings! I have real-time access to hospital beds and blood banks. What do you need?",
+            "Welcome to CareBridge. Use me to find emergency services quickly."
+        ]
+    },
+    {
+        "intent": "bed_availability",
+        "utterances": [
+            "Do you have beds?",
+            "I need an ICU bed",
+            "Is there space in the hospital?",
+            "Check bed availability",
+            "Are there any oxygen beds?",
+            "Find me a hospital with beds",
+            "Bed status",
+            "Vacuum beds",
+            "Ventilator availability"
+        ],
+        "answers": [
+            "checking_beds"
+        ]
+    },
+    {
+        "intent": "blood_availability",
+        "utterances": [
+            "I need blood",
+            "Is O+ available?",
+            "Find me A negative blood",
+            "Blood bank status",
+            "Who has B+ blood?",
+            "Emergency blood required",
+            "Plasma availability",
+            "Platelets need"
+        ],
+        "answers": [
+            "checking_blood"
+        ]
+    },
+    {
+        "intent": "ambulance",
+        "utterances": [
+            "Call an ambulance",
+            "I need emergency transport",
+            "Send help",
+            "Ambulance number",
+            "Medical emergency transport",
+            "108 ambulance",
+            "how to book ambulance"
+        ],
+        "answers": [
+            "🚑 Emergency Ambulance: Call 108 immediately for government service. For private transport, simply click the 'Book Ambulance' button on your dashboard for instant dispatch."
+        ]
+    },
+    {
+        "intent": "location_query",
+        "utterances": [
+            "Hospitals in Jaipur",
+            "Clinics in Delhi",
+            "Medical centers in Mumbai",
+            "Find doctors near me",
+            "Where is the nearest hospital?",
+            "Location of SMS hospital"
+        ],
+        "answers": [
+            "checking_location"
+        ]
+    },
+    {
+        "intent": "capabilities",
+        "utterances": [
+            "What can you do?",
+            "How do you work?",
+            "Help me",
+            "Features of this app",
+            "Who are you?",
+            "Are you a real person?"
+        ],
+        "answers": [
+            "I am an AI assistant integrated with the CareBridge network. I can trace real-time bed availability, check blood bank inventory, facilitate ambulance bookings, and provide hospital directions."
+        ]
+    },
+    {
+        "intent": "symptoms",
+        "utterances": [
+            "I have a fever",
+            "Chest pain",
+            "Difficulty breathing",
+            "My head hurts",
+            "Stomach ache",
+            "Feeling dizzy",
+            "COVID symptoms"
+        ],
+        "answers": [
+            "⚠️ I am an AI, not a doctor. However, if you have severe symptoms like chest pain or difficulty breathing, please visit the nearest ER immediately or call 108. Would you like me to find the closest hospital?"
+        ]
+    },
+    {
+        "intent": "register",
+        "utterances": [
+            "How to register a hospital?",
+            "Sign up account",
+            "Create new account",
+            "Login for doctors",
+            "Hospital entry"
+        ],
+        "answers": [
+            "Hospitals can register by clicking 'Hospital Auth' in the menu. You will need to upload valid medical licenses for verification. Users do not need to register to view data."
+        ]
+    },
+    {
+        "intent": "thank_you",
+        "utterances": [
+            "Thanks",
+            "Thank you",
+            "Appreciate it",
+            "Good job",
+            "Thanks for the help"
+        ],
+        "answers": [
+            "You're welcome! Stay safe.",
+            "Happy to help. take care!",
+            "Anytime! Remember, I'm here 24/7 if you need medical info."
+        ]
+    },
+    {
+        "intent": "bye",
+        "utterances": [
+            "Bye",
+            "Goodbye",
+            "See you",
+            "Ciao",
+            "Signing off"
+        ],
+        "answers": [
+            "Goodbye! Stay healthy.",
+            "See you later. Stay safe out there!",
+            "Bye! Don't hesitate to ask if you need anything else."
+        ]
+    }
+]

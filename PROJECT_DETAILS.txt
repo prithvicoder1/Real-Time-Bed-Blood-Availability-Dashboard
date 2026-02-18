@@ -1,0 +1,32 @@
+PROJECT: CareBridge - Emergency Response System
+VERSION: 1.0.0
+
+DESCRIPTION:
+CareBridge is a real-time hospital management and emergency response platform. It connects patients with critical medical resources like ICU beds, oxygen cylinders, and blood banks. The system features a dual-portal architecture: one for general users/patients to find help, and another for hospitals to manage their data.
+
+CORE COMPONENTS:
+
+1. FRONTEND (/frontend)
+   - Built with React and Vite.
+   - Features a responsive dashboard for monitoring hospital stats.
+   - Includes an interactive map powered by Leaflet.
+   - "UserDashboard.jsx" is the main view for users.
+   - "HospitalAuth.jsx" handles hospital registration/login.
+   - "Chatbot.jsx" provides an AI interface for immediate help.
+
+2. BACKEND (/backend)
+   - Built with Node.js and Express.
+   - API connects to MongoDB for data persistence.
+   - "server.js" is the entry point.
+   - "manager.js" (in chatbot/) handles NLP logic basics.
+   - Handles real-time events via Socket.io.
+
+3. KEY FEATURES
+   - Dynamic Bed Availability: Real-time updates on bed status.
+   - Blood Bank Inventory: Track blood units by type.
+   - AI Assistant: Provides first aid steps and site navigation.
+   - Verification System: Verified hospitals receive a badge.
+   - Emergency Routing: Integration with ambulance services.
+
+AUTHOR: Prithi Vijay
+DATE: Feb 2026
