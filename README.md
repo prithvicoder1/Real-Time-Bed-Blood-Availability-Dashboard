@@ -108,7 +108,7 @@ npm run dev
 
 ---
 
-## 🤖 CareBot AI Interaction
+## 🤖 CareBot AI Interaction :
 
 CareBridge features an integrated NLP chatbot trained to handle high-stress situations. It categorizes user input into specific intents:
 *   **Emergency Advice**: Recognizes symptoms and trauma (Heart Attack, Stroke, Choking, Bleeding) and instantly provides critical First Aid/CPR steps.
@@ -133,5 +133,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 <div align="center">
-  <p>Built with ❤️ to save lives.</p>
+  <p>Built with 😎 to save lives.</p>
 </div>
