@@ -1,7 +1,0 @@
-[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
-Server running on port 5001
-Password reset requested for: test_fp_hospital@example.com
-No SMTP config found. Using Ethereal (mock) email.
-Message sent: <15297be1-6459-8b64-a739-42e682e95fa8@carebridge.com>
-Preview URL: https://ethereal.email/message/aZS021TtY5iYrkM.aZS04MPU1TAFOTGPAAAAAbIdm-Zo51Fihahcx2kSmUM
-Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017

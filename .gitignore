@@ -1,0 +1,19 @@
+# Dependencies and generated frontend assets
+**/node_modules/
+frontend/dist/
+
+# Python caches (trained demonstration artifacts are intentionally versioned)
+ml/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Local runtime files
+backend/uploads/
+backend/server_output_log*.txt
+.DS_Store
+**/.DS_Store
+
+# Local environment settings
+.env
+.env.*
+!.env.example
