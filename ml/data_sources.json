@@ -1,0 +1,29 @@
+{
+  "version": "2026-08-10",
+  "sources": [
+    {
+      "name": "Health Dynamics of India 2022-23 — beds by facility level",
+      "publisher": "Ministry of Health and Family Welfare / Rajya Sabha Open Government Data",
+      "url": "https://www.data.gov.in/resource/stateut-wise-number-beds-phc-chc-sdh-dh-and-medical-colleges-india-rural-urban-31-03-2023",
+      "updated": "2026-05-26",
+      "license": "Government Open Data License - India",
+      "role": "aggregate capacity calibration only"
+    },
+    {
+      "name": "Blood Bank Directory",
+      "publisher": "National Institute of Health and Family Welfare, Ministry of Health and Family Welfare",
+      "url": "https://www.data.gov.in/catalog/blood-bank-directory-national-health-portal",
+      "updated": "2022-07-12",
+      "license": "Government Open Data License - India",
+      "role": "directory reference; not live stock"
+    },
+    {
+      "name": "ABDM Health Facility Registry",
+      "publisher": "National Health Authority",
+      "url": "https://abdm.gov.in/health-facilities",
+      "updated": "2026-02-27",
+      "role": "facility identity verification; not occupancy training"
+    }
+  ],
+  "warning": "No open source listed here provides hospital-level hourly occupancy targets. The committed forecast artifact therefore uses simulation and must be retrained on authorised hospital snapshots for a real pilot."
+}
