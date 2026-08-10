@@ -70,6 +70,21 @@ app.get('/api/hospitals', async (req,res)=>{
   } catch { res.status(503).json({message:'Hospital directory unavailable'}); }
 });
 
+app.post('/api/hospitals/register',async(req,res)=>{
+  if(dbStatus()!=='connected')return res.status(503).json({message:'Registration requires PostgreSQL'});
+  const name=String(req.body.name||'').trim();const email=String(req.body.email||'').trim().toLowerCase();const password=String(req.body.password||'');const city=String(req.body.city||'').trim();const state=String(req.body.state||'').trim();const address=String(req.body.address||'').trim();const facilityType=String(req.body.facilityType||'Hospital').trim();
+  if(name.length<3||!/^\S+@\S+\.\S+$/.test(email)||password.length<8||!city||!state||!address)return res.status(400).json({message:'Name, valid email, 8+ character password, city, state and address are required'});
+  const id=`hospital-${crypto.randomUUID()}`;const passwordHash=await bcrypt.hash(password,12);
+  try{
+    await pool.query('BEGIN');
+    await pool.query(`INSERT INTO hospitals(id,name,email,password_hash,city,state,address,facility_type,hfr_id,verification_status) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'pending_review')`,[id,name,email,passwordHash,city,state,address,facilityType,String(req.body.hfrId||'').trim()||null]);
+    await pool.query(`INSERT INTO resource_snapshots(hospital_id,total_beds,occupied_beds,icu_available,oxygen_beds_available,blood_inventory) VALUES($1,0,0,0,0,'{}'::jsonb)`,[id]);
+    await pool.query(`INSERT INTO audit_events(actor_id,action,entity_type,entity_id,metadata) VALUES($1,'hospital_registered','hospital',$1,$2)`,[id,JSON.stringify({name,email,city,state})]);
+    await pool.query('COMMIT');
+    res.status(201).json({message:'Registration submitted. You can sign in now and complete inventory and certificate verification.',hospital:{id,name,email,verificationStatus:'pending_review'},token:sign({id,email,role:'hospital'},'8h')});
+  }catch(error){await pool.query('ROLLBACK');if(error.code==='23505')return res.status(409).json({message:'A hospital account already uses this email'});throw error;}
+});
+
 app.post('/api/admin/login', async (req,res)=>{
   const email = process.env.ADMIN_EMAIL || 'admin@carebridge.in';
   const configured = process.env.ADMIN_PASSWORD_HASH;
@@ -85,6 +100,11 @@ app.post('/api/hospitals/login', async (req,res)=>{
   const hospital=result.rows[0];
   if(!hospital?.password_hash || !await bcrypt.compare(req.body.password||'',hospital.password_hash)) return res.status(401).json({message:'Invalid credentials'});
   res.json({token:sign({id:hospital.id,email:hospital.email,role:'hospital'},'8h'),hospital:{id:hospital.id,name:hospital.name,email:hospital.email}});
+});
+
+app.get('/api/hospitals/me',authenticate('hospital'),async(req,res)=>{
+  const result=await pool.query('SELECT id,name,email,city,state,address,facility_type,hfr_id,verification_status,created_at FROM hospitals WHERE id=$1',[req.user.id]);
+  if(!result.rowCount)return res.status(404).json({message:'Hospital account not found'});res.json(result.rows[0]);
 });
 
 app.put('/api/hospitals/:id/resources',authenticate('hospital'),async(req,res)=>{
