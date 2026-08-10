@@ -2,7 +2,7 @@ services:
   - type: web
     name: carebridge
     runtime: docker
-    plan: starter
+    plan: free
     dockerfilePath: ./backend/Dockerfile
     dockerContext: .
     healthCheckPath: /api/health
@@ -18,14 +18,8 @@ services:
         sync: false
       - key: ADMIN_PASSWORD
         sync: false
-      - key: UPLOADS_DIR
-        value: /var/data/carebridge-uploads
       - key: NODE_ENV
         value: production
-    disk:
-      name: carebridge-certificates
-      mountPath: /var/data/carebridge-uploads
-      sizeGB: 1
 
 databases:
   - name: carebridge-db

@@ -17,16 +17,12 @@ dotenv.config();
 const app = express();
 const PORT = Number(process.env.PORT || 5001);
 const JWT_SECRET = process.env.JWT_SECRET || 'development-only-change-me';
-const uploadsRoot = process.env.UPLOADS_DIR || path.join(__dirname, 'uploads');
-const uploadsDir = path.join(uploadsRoot, 'certificates');
-fs.mkdirSync(uploadsDir, { recursive: true });
 
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
 app.use(express.json({ limit: '1mb' }));
-app.use('/uploads', express.static(uploadsRoot));
 
 const upload = multer({
-  dest: uploadsDir,
+  storage: multer.memoryStorage(),
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (_req, file, done) => done(null, ['application/pdf', 'image/png', 'image/jpeg'].includes(file.mimetype)),
 });
@@ -160,11 +156,11 @@ app.get('/api/chat/status',(_req,res)=>res.json(chatbot.getStatus()));
 
 app.post('/api/certificates',authenticate('hospital'),upload.single('certificate'),async(req,res)=>{
   if(!req.file)return res.status(400).json({message:'PDF, PNG or JPG certificate required'});
-  const bytes=fs.readFileSync(req.file.path);const sha256=crypto.createHash('sha256').update(bytes).digest('hex');
+  const bytes=req.file.buffer;const sha256=crypto.createHash('sha256').update(bytes).digest('hex');
   const {certificateType='Other',issuer='',registrationNumber='',hfrId=''}=req.body;const signals=[];let risk=10;
   if(!issuer){risk+=20;signals.push('Issuer missing')}if(!registrationNumber){risk+=25;signals.push('Registration number missing')}if(!hfrId){risk+=10;signals.push('HFR ID missing')}if(req.file.size<20000){risk+=15;signals.push('Unusually small file')}
   risk=Math.min(100,risk);const analysis={riskScore:risk,signals,sha256,disclaimer:'Automated screening is not proof of authenticity. Verify with ABDM HFR and the issuer.'};
-  if(dbStatus()==='connected')await pool.query(`INSERT INTO certificates(hospital_id,certificate_type,issuer,registration_number,file_path,original_filename,sha256,risk_score,analysis) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,[req.user.id,certificateType,issuer,registrationNumber,req.file.path,req.file.originalname,sha256,risk,JSON.stringify({...analysis,hfrId})]);
+  if(dbStatus()==='connected')await pool.query(`INSERT INTO certificates(hospital_id,certificate_type,issuer,registration_number,file_path,original_filename,mime_type,file_data,sha256,risk_score,analysis) VALUES($1,$2,$3,$4,'postgresql',$5,$6,$7,$8,$9,$10)`,[req.user.id,certificateType,issuer,registrationNumber,req.file.originalname,req.file.mimetype,bytes,sha256,risk,JSON.stringify({...analysis,hfrId})]);
   res.status(201).json({reviewStatus:'manual_review',certificate:{type:certificateType,name:req.file.originalname,issuer,registrationNumber},analysis});
 });
 
