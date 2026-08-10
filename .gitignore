@@ -1,6 +1,7 @@
 # Dependencies and generated frontend assets
 **/node_modules/
 frontend/dist/
+/dist/
 
 # Python caches (trained demonstration artifacts are intentionally versioned)
 ml/__pycache__/
@@ -9,6 +10,7 @@ ml/__pycache__/
 
 # Local runtime files
 backend/uploads/
+/uploads/
 backend/server_output_log*.txt
 .DS_Store
 **/.DS_Store

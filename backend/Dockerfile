@@ -1,3 +1,11 @@
+FROM node:22-bookworm-slim AS frontend-build
+
+WORKDIR /app/frontend
+COPY frontend/package*.json ./
+RUN npm ci
+COPY frontend ./
+RUN npm run build
+
 FROM node:22-bookworm-slim
 
 WORKDIR /app/backend
@@ -13,9 +21,10 @@ RUN pip3 install -r /app/ml/runtime-requirements.txt --break-system-packages
 
 COPY backend ./
 COPY ml /app/ml
+COPY --from=frontend-build /app/frontend/dist /app/frontend/dist
 
 RUN python3 /app/ml/train.py && python3 /app/ml/train_chatbot.py
 
-EXPOSE 5001
+EXPOSE 10000
 
 CMD ["node", "server.js"]

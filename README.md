@@ -1,6 +1,6 @@
 # CareBridge — real-time bed & blood coordination
 
-CareBridge is an Amity University hackathon project for coordinating hospital beds, blood inventory, ambulances, facility verification, and capacity forecasts through patient, hospital, and administrator portals.
+CareBridge coordinates hospital beds, blood inventory, ambulances, facility verification, and capacity forecasts through patient, hospital, and administrator portals.
 
 ## Stack
 
@@ -27,7 +27,20 @@ cd backend && npm install && npm start
 cd frontend && npm install && npm run dev
 ```
 
-Set `DATABASE_URL`, `JWT_SECRET`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` from `.env.example`. When PostgreSQL is unavailable, the API deliberately falls back to clearly labelled demonstration inventory so the hackathon preview stays usable.
+Set `DATABASE_URL`, `JWT_SECRET`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` from `.env.example`. When PostgreSQL is unavailable, the public directory deliberately falls back to clearly labelled demonstration inventory.
+
+## Deploy to Render
+
+The root `render.yaml` creates a Docker web service, a managed PostgreSQL database, and persistent certificate storage. In Render, choose **New → Blueprint**, connect this repository, and apply the Blueprint. Render asks for `ADMIN_EMAIL` and `ADMIN_PASSWORD`; use a strong, unique password.
+
+The Docker service builds the Vite frontend and serves it from Express, so the UI and `/api` share one public URL. The API applies `backend/db/init.sql` during startup and seeds the bundled public directory when the database is empty.
+
+### Where data is stored
+
+- Hospital accounts, resource snapshots, certificate metadata, and audit events are stored in PostgreSQL through `DATABASE_URL`. Locally this is the `postgres_data` Docker volume; on Render it is the managed `carebridge-db` database.
+- Uploaded PDF/JPG/PNG certificate files are stored locally under `backend/uploads/certificates`. On Render, `UPLOADS_DIR=/var/data/carebridge-uploads` places them on the attached persistent disk.
+- The 150 bundled directory records and simulated demonstration inventory live in `backend/data/hospitals.json`; they are copied into PostgreSQL on startup.
+- Trained ML artifacts are versioned in `ml/` and embedded in the Docker image. They are not database records.
 
 ## Train and test the ML model
 
