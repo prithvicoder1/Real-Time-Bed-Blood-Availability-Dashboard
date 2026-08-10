@@ -46,6 +46,7 @@ async function seedDemoData() {
   if (dbStatus() !== 'connected') return;
   await pool.query('ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS phone TEXT');
   await pool.query('ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS license_number TEXT');
+  await pool.query('ALTER TABLE certificates ADD COLUMN IF NOT EXISTS original_filename TEXT');
   await pool.query("DELETE FROM hospitals WHERE verification_status IN ('demo','public_directory')");
   for (const h of demoHospitals) {
     await pool.query(`INSERT INTO hospitals(id,name,email,city,state,address,latitude,longitude,facility_type,verification_status)
@@ -117,6 +118,7 @@ app.patch('/api/hospitals/me',authenticate('hospital'),async(req,res)=>{
 });
 
 app.get('/api/hospitals/me/resources',authenticate('hospital'),async(req,res)=>{const result=await pool.query('SELECT * FROM resource_snapshots WHERE hospital_id=$1 ORDER BY recorded_at DESC LIMIT 1',[req.user.id]);res.json(result.rows[0]||null)});
+app.get('/api/hospitals/me/certificates',authenticate('hospital'),async(req,res)=>{const result=await pool.query('SELECT id,certificate_type,issuer,registration_number,original_filename,risk_score,review_status,uploaded_at FROM certificates WHERE hospital_id=$1 ORDER BY uploaded_at DESC',[req.user.id]);res.json(result.rows)});
 
 app.put('/api/hospitals/:id/resources',authenticate('hospital'),async(req,res)=>{
   if(req.user.id!==req.params.id)return res.status(403).json({message:'Cannot update another facility'});
@@ -132,8 +134,8 @@ app.get('/api/analyze',(req,res)=>{
   const script=path.join(__dirname,'../ml/predict.py');
   execFile(process.env.PYTHON_BIN||'python3',[script,JSON.stringify({current_occupancy:occupancy})],{timeout:10000},(error,stdout)=>{
     if(error)return res.status(503).json({message:'Forecast service unavailable'});
-    const prediction=JSON.parse(stdout);const peak=Math.max(...prediction.occupancy_trend);
-    res.json({...prediction,model_score:prediction.metrics?.r2||0,insight:peak>=90?`Forecast reaches ${peak}%. Confirm capacity before dispatch.`:`Forecast peaks at ${peak}%. Continue monitoring live updates.`});
+    const prediction=JSON.parse(stdout);const peak=Math.max(...prediction.occupancy_trend);const start=new Date();const time_labels=prediction.occupancy_trend.map((_,index)=>new Date(start.getTime()+(index+1)*2*60*60*1000).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'}));const risk_level=peak>=90?'critical':peak>=80?'high':peak>=70?'moderate':'stable';const insight=risk_level==='critical'?`Critical pressure may reach ${peak}%. Confirm beds and prepare escalation now.`:risk_level==='high'?`High pressure may reach ${peak}%. Review staffing and discharge plans.`:risk_level==='moderate'?`Moderate pressure may reach ${peak}%. Monitor updates and keep reserve capacity.`:`Capacity looks stable, peaking near ${peak}%. Continue routine monitoring.`;
+    res.json({...prediction,time_labels,risk_level,model_score:prediction.metrics?.r2||0,insight});
   });
 });
 
@@ -161,8 +163,8 @@ app.post('/api/certificates',authenticate('hospital'),upload.single('certificate
   const {certificateType='Other',issuer='',registrationNumber='',hfrId=''}=req.body;const signals=[];let risk=10;
   if(!issuer){risk+=20;signals.push('Issuer missing')}if(!registrationNumber){risk+=25;signals.push('Registration number missing')}if(!hfrId){risk+=10;signals.push('HFR ID missing')}if(req.file.size<20000){risk+=15;signals.push('Unusually small file')}
   risk=Math.min(100,risk);const analysis={riskScore:risk,signals,sha256,disclaimer:'Automated screening is not proof of authenticity. Verify with ABDM HFR and the issuer.'};
-  if(dbStatus()==='connected')await pool.query(`INSERT INTO certificates(hospital_id,certificate_type,issuer,registration_number,file_path,sha256,risk_score,analysis) VALUES($1,$2,$3,$4,$5,$6,$7,$8)`,[req.user.id,certificateType,issuer,registrationNumber,req.file.path,sha256,risk,JSON.stringify({...analysis,hfrId})]);
-  res.status(201).json({reviewStatus:'manual_review',analysis});
+  if(dbStatus()==='connected')await pool.query(`INSERT INTO certificates(hospital_id,certificate_type,issuer,registration_number,file_path,original_filename,sha256,risk_score,analysis) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9)`,[req.user.id,certificateType,issuer,registrationNumber,req.file.path,req.file.originalname,sha256,risk,JSON.stringify({...analysis,hfrId})]);
+  res.status(201).json({reviewStatus:'manual_review',certificate:{type:certificateType,name:req.file.originalname,issuer,registrationNumber},analysis});
 });
 
 app.get('/api/admin/audit',authenticate('admin'),async(_req,res)=>{if(dbStatus()!=='connected')return res.json([]);res.json((await pool.query('SELECT * FROM audit_events ORDER BY created_at DESC LIMIT 100')).rows)});

@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS certificates (
   issuer TEXT,
   registration_number TEXT,
   file_path TEXT NOT NULL,
+  original_filename TEXT,
   sha256 TEXT NOT NULL,
   risk_score INTEGER NOT NULL CHECK (risk_score BETWEEN 0 AND 100),
   analysis JSONB NOT NULL,
@@ -59,3 +60,4 @@ CREATE TABLE IF NOT EXISTS audit_events (
 
 ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS phone TEXT;
 ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS license_number TEXT;
+ALTER TABLE certificates ADD COLUMN IF NOT EXISTS original_filename TEXT;

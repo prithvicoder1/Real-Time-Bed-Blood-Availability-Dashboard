@@ -188,6 +188,8 @@
 </label>
 <div id="forecastChart" class="forecast-chart">
 </div>
+<div class="forecast-legend"><span><i class="stable"></i>Below 70% · stable</span><span><i class="moderate"></i>70–79% · monitor</span><span><i class="high"></i>80–89% · high</span><span><i class="critical"></i>90%+ · critical</span></div>
+<div class="forecast-summary"><b id="forecastRisk">Waiting for forecast</b><span id="forecastPlain">Choose current occupancy, then run the forecast.</span></div>
 <div id="forecastInsight" class="forecast-insight">Run a forecast to see capacity pressure.</div>
 <button id="forecastButton" class="primary-button">Run 14-hour forecast <span>↗</span>
 </button>
@@ -309,9 +311,12 @@
 <h2>Certificate verification</h2>
 <label>Certificate type<select name="certificateType">
 <option>Hospital licence</option>
+<option>Clinical Establishment registration</option>
 <option>NABH accreditation</option>
 <option>Blood bank licence</option>
 <option>Fire safety certificate</option>
+<option>Biomedical waste authorisation</option>
+<option>Pharmacy licence</option>
 </select>
 </label>
 <label>Issuer<input name="issuer" required>
@@ -325,6 +330,7 @@
 <button class="primary-button">Upload for screening</button>
 <output id="certificateStatus" class="form-status">
 </output>
+<div id="certificateHistory" class="certificate-history"><p>No certificates uploaded yet.</p></div>
 </form>
 </div>
 </div>
@@ -469,12 +475,14 @@
 <div class="dialog-icon">A+</div>
 <span class="kicker">ADMINISTRATION</span>
 <h2>Network administrator</h2>
+<p>Administrator accounts are separate from hospital accounts. For this local hackathon demo, use the configured demo administrator.</p>
 <form id="adminLoginForm" class="portal-form">
 <label>Administrator email<input name="email" type="email" required>
 </label>
 <label>Password<input name="password" type="password" required>
 </label>
 <button class="primary-button" type="submit">Open administration →</button>
+<button id="useDemoAdmin" class="secondary-button" type="button">Use local demo administrator</button>
 <output class="form-status" id="adminLoginStatus">
 </output>
 </form>
