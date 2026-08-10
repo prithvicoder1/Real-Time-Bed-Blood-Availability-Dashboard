@@ -62,3 +62,5 @@ docker compose config --quiet
 ## Data sources and limitations
 
 CareBridge distinguishes live partner feeds from demonstration data. Useful authoritative sources for a production pilot include the ABDM Health Facility Registry for facility identity and India's Open Government Data Platform for aggregate infrastructure reference data. Public aggregate datasets are not substitutes for hospital-provided real-time bed or blood inventory.
+
+The bundled directory contains 150 public facility identity/location records from the National Hospital Directory layer published through Living Atlas India. Refresh it with `cd backend && npm run sync:hospitals`. Because that directory does not publish live inventory, every generated bed and blood value is explicitly labelled `simulated_demo` in the dataset and UI.

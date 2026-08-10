@@ -44,9 +44,10 @@ function authenticate(role) {
 
 async function seedDemoData() {
   if (dbStatus() !== 'connected') return;
+  await pool.query("DELETE FROM hospitals WHERE verification_status IN ('demo','public_directory')");
   for (const h of demoHospitals) {
     await pool.query(`INSERT INTO hospitals(id,name,email,city,state,address,latitude,longitude,facility_type,verification_status)
-      VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'demo') ON CONFLICT(id) DO NOTHING`,
+      VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'public_directory') ON CONFLICT(id) DO NOTHING`,
       [h.id,h.name,h.email,h.city,h.state,h.location,h.lat,h.lng,h.type]);
     const exists = await pool.query('SELECT 1 FROM resource_snapshots WHERE hospital_id=$1 LIMIT 1',[h.id]);
     if (!exists.rowCount) await pool.query(`INSERT INTO resource_snapshots(hospital_id,total_beds,occupied_beds,icu_available,oxygen_beds_available,blood_inventory)
@@ -62,8 +63,12 @@ async function listHospitals() {
     beds:{total:r.total_beds||0,occupied:r.occupied_beds||0,icu:r.icu_available||0,oxygen:r.oxygen_beds_available||0},blood:r.blood_inventory||{},lastUpdated:r.recorded_at,verificationStatus:r.verification_status}));
 }
 
-app.get('/api/health', (_req,res)=>res.json({status:'Online',database:dbStatus(),model:fs.existsSync(path.join(__dirname,'../ml/occupancy_model.pkl'))?'ready':'not-trained'}));
-app.get('/api/hospitals', async (_req,res)=>{ try { res.json(await listHospitals()); } catch { res.json(demoHospitals); } });
+app.get('/api/health', (_req,res)=>res.json({status:'Online',database:dbStatus(),model:fs.existsSync(path.join(__dirname,'../ml/occupancy_model.pkl'))?'ready':'not-trained',facilities:demoHospitals.length}));
+app.get('/api/hospitals', async (req,res)=>{
+  try { const all=await listHospitals();const query=String(req.query.q||'').trim().toLowerCase();const state=String(req.query.state||'').trim().toLowerCase();const filtered=all.filter(h=>!query||`${h.name} ${h.city} ${h.state} ${h.location}`.toLowerCase().includes(query)).filter(h=>!state||h.state.toLowerCase()===state);const limit=Math.min(150,Math.max(1,Number(req.query.limit)||30));const page=Math.max(1,Number(req.query.page)||1);const start=(page-1)*limit;
+    res.json({data:filtered.slice(start,start+limit),pagination:{page,limit,total:filtered.length,pages:Math.ceil(filtered.length/limit)},source:{name:'National Hospital Directory / Living Atlas India',inventory:'simulated_demo',notice:'Directory identity and location are public data. Bed and blood values are simulated and must be confirmed directly.'}});
+  } catch { res.status(503).json({message:'Hospital directory unavailable'}); }
+});
 
 app.post('/api/admin/login', async (req,res)=>{
   const email = process.env.ADMIN_EMAIL || 'admin@carebridge.in';
