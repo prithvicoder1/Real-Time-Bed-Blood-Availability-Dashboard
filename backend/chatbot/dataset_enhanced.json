@@ -1,0 +1,280 @@
+[
+    {
+        "intent": "greeting",
+        "utterances": [
+            "Hello",
+            "Hi",
+            "Hey there",
+            "Greetings",
+            "Good morning",
+            "Good afternoon",
+            "Is anyone there?",
+            "Yo",
+            "Whats up",
+            "Hola",
+            "Namaste",
+            "Hey bot",
+            "Wassup",
+            "bot",
+            "Help me"
+        ],
+        "answers": [
+            "Hello! I am CareBridge AI. How can I assist you today? You can ask me to find ICU beds, check blood availability, or get emergency first aid guidance.",
+            "Hi there! I'm here to help you navigate medical emergencies. Do you need an ambulance, bed availability status, or first-aid instructions?",
+            "Greetings! Welcome to CareBridge. I can give you real-time hospital resource stats or guide you through an emergency. What do you need?"
+        ]
+    },
+    {
+        "intent": "capabilities",
+        "utterances": [
+            "What can you do?",
+            "How do you work?",
+            "Features of this app",
+            "Who are you?",
+            "Are you a real person?",
+            "What is CareBridge?",
+            "How does this help",
+            "What do you know"
+        ],
+        "answers": [
+            "I'm an AI assistant designed to connect you to real-time medical resources. You can ask me to:\n🏥 'Find ICU beds'\n🩸 'Check O+ blood availability'\n🚑 'How to call an ambulance'\n❤️ 'Provide CPR instructions'",
+            "I can help you find hospital beds, blood type availability, provide emergency first aid steps, and connect you to emergency services. How can I direct you?"
+        ]
+    },
+    {
+        "intent": "bed_availability",
+        "utterances": [
+            "Do you have beds?",
+            "I need an ICU bed",
+            "Is there space in the hospital?",
+            "Check bed availability",
+            "Are there any oxygen beds?",
+            "Find me a hospital with beds",
+            "Bed status",
+            "Vacuum beds",
+            "Ventilator availability",
+            "General ward beds",
+            "Where can I find an ICU",
+            "Hospitals with general beds",
+            "Pediatric ward availability"
+        ],
+        "answers": [
+            "checking_beds"
+        ]
+    },
+    {
+        "intent": "blood_availability",
+        "utterances": [
+            "I need blood",
+            "Is O+ available?",
+            "Find me A negative blood",
+            "Blood bank status",
+            "Who has B+ blood?",
+            "Emergency blood required",
+            "Plasma availability",
+            "Platelets need",
+            "AB negative blood",
+            "Any hospitals with blood",
+            "Need blood for surgery",
+            "O positive donor"
+        ],
+        "answers": [
+            "checking_blood"
+        ]
+    },
+    {
+        "intent": "location_query",
+        "utterances": [
+            "Hospitals in Jaipur",
+            "Clinics in Delhi",
+            "Medical centers in Mumbai",
+            "Find doctors near me",
+            "Where is the nearest hospital?",
+            "Location of SMS hospital",
+            "Directions to hospital",
+            "Give me directions",
+            "How to get to a hospital",
+            "Locate emergency room",
+            "Address of nearest clinic"
+        ],
+        "answers": [
+            "checking_location"
+        ]
+    },
+    {
+        "intent": "ambulance_booking",
+        "utterances": [
+            "Call an ambulance",
+            "I need emergency transport",
+            "Send help",
+            "Ambulance number",
+            "Medical emergency transport",
+            "108 ambulance",
+            "how to book ambulance",
+            "Get me an ambulance"
+        ],
+        "answers": [
+            "🚑 For immediate medical emergencies (ICU/Oxygen), dial **108**. For basic transport, dial **102**. You can also click the red 'Emergency Ambulance' button on your dashboard to initiate a call instantly."
+        ]
+    },
+    {
+        "intent": "ambulance_info",
+        "utterances": [
+            "What is the difference between 108 and 102?",
+            "Which ambulance number should I call?",
+            "Types of ambulance"
+        ],
+        "answers": [
+            "🚑 **108** is for Critical Emergencies (Accidents, Heart Attacks, Trauma) requiring life support.\n🚑 **102** is for Basic Patient Transport (maternity, non-critical transfers). Choose wisely based on the patient's condition."
+        ]
+    },
+    {
+        "intent": "register_hospital",
+        "utterances": [
+            "How to register a hospital?",
+            "Sign up account",
+            "Create new account",
+            "Login for doctors",
+            "Hospital entry",
+            "I want to list my hospital"
+        ],
+        "answers": [
+            "To register a hospital:\n1. Go to the 'Hospital Auth' page via the menu.\n2. Click 'Register here'.\n3. Fill in the hospital details and upload valid certificates.\n4. Once registered, you can log in to update your bed and blood inventory."
+        ]
+    },
+    {
+        "intent": "login_issues",
+        "utterances": [
+            "I cannot login",
+            "Forgot password",
+            "Reset password",
+            "Change password",
+            "Login failed"
+        ],
+        "answers": [
+            "If you forgot your password, go to the Login page and click 'Forgot Password?'. You can reset it using an OTP sent to your registered email or phone."
+        ]
+    },
+    {
+        "intent": "cpr_instruction",
+        "utterances": [
+            "How to do CPR?",
+            "Patient is not breathing",
+            "Cardiac arrest help",
+            "CPR steps",
+            "No pulse what to do",
+            "Someone collapsed"
+        ],
+        "answers": [
+            "🚨 **CPR Instructions (Hands-Only):**\n1. **Call 108** immediately.\n2. Place heel of one hand on the center of the chest, other hand on top.\n3. Push hard and fast (100-120 compressions/minute) at least 2 inches deep.\n4. Allow chest to recoil completely between pushes.\n5. Continue until help arrives.\n*Do not stop unless you are exhausted or the patient wakes up.*"
+        ]
+    },
+    {
+        "intent": "heart_attack",
+        "utterances": [
+            "Heart attack symptoms",
+            "Chest pain what to do",
+            "My chest hurts",
+            "Pain in left arm",
+            "Signs of heart attack"
+        ],
+        "answers": [
+            "⚠️ **Heart Attack Suspected:**\n1. Call **108** immediately.\n2. Have the person sit down and rest.\n3. Loosen tight clothing.\n4. If they are not allergic, give them an Aspirin (chewable works best).\n5. Keep them calm until help arrives.\n*Symptoms: Chest pain/pressure, shortness of breath, pain in arm/jaw, sweating.*"
+        ]
+    },
+    {
+        "intent": "stroke",
+        "utterances": [
+            "Stroke symptoms",
+            "Face drooping",
+            "Slurred speech",
+            "Cannot raise arm",
+            "Signs of stroke"
+        ],
+        "answers": [
+            "⚠️ **Stroke Suspected (Think F.A.S.T.):**\n**F**ace: Is one side drooping?\n**A**rms: Can they raise both arms?\n**S**peech: Is speech slurred?\n**T**ime: Time to call **108** immediately!\n*Note the time symptoms started. Do not give them food or water.*"
+        ]
+    },
+    {
+        "intent": "burns",
+        "utterances": [
+            "Treat a burn",
+            "I got burned",
+            "Fire burn treatment",
+            "Scalding water burn"
+        ],
+        "answers": [
+            "🔥 **Burn First Aid:**\n1. Cool the burn under **cool running water** for at least 10-20 minutes. (Do not use ice!)\n2. Remove tight items (rings, watches) before swelling starts.\n3. Cover with a sterile, non-stick bandage or clean cloth.\n4. Do not pop blisters.\n*Seek medical help for burns larger than a palm or on face/hands.*"
+        ]
+    },
+    {
+        "intent": "bleeding",
+        "utterances": [
+            "Heavy bleeding",
+            "Cut finger",
+            "Stop bleeding",
+            "Deep wound help"
+        ],
+        "answers": [
+            "🩸 **Stop Bleeding:**\n1. Apply **direct pressure** on the wound with a clean cloth/gauze.\n2. Keep pressure for at least 3-4 minutes. Do not peek.\n3. Elevate the injury above the heart if possible.\n4. If bleeding soaks through, add more layers on top (don't remove the first one).\n*Call 108 if bleeding is severe or doesn't stop.*"
+        ]
+    },
+    {
+        "intent": "choking",
+        "utterances": [
+            "Choking help",
+            "Cannot breathe",
+            "Food stuck in throat",
+            "Heimlich maneuver"
+        ],
+        "answers": [
+            "🚑 **Choking First Aid (Heimlich Maneuver):**\n1. Stand behind the person.\n2. Wrap arms around their waist.\n3. Make a fist above their navel (belly button).\n4. Grab your fist with other hand and pull **inward and upward** sharply.\n5. Repeat until object is dislodged.\n*If they fall unconscious, start CPR.*"
+        ]
+    },
+    {
+        "intent": "thank_you",
+        "utterances": [
+            "Thanks",
+            "Thank you",
+            "Appreciate it",
+            "Good job",
+            "Thanks for the help",
+            "Thx"
+        ],
+        "answers": [
+            "You're welcome! Stay safe and healthy.",
+            "Happy to help! Take care.",
+            "Anytime! Remember, I'm here 24/7 for medical info."
+        ]
+    },
+    {
+        "intent": "forecast_explanation",
+        "utterances": [
+            "How does prediction work?",
+            "Explain the ML forecast",
+            "What does the occupancy model predict?",
+            "How accurate is the model?",
+            "What data trains the prediction?",
+            "Tell me about machine learning"
+        ],
+        "answers": [
+            "The capacity forecast estimates the next 14 hours from current occupancy, time, weekday, temperature, holidays and facility type. It was evaluated with a chronological holdout, but the demo artifact uses privacy-safe simulation because open public datasets do not contain hospital-level hourly occupancy. It supports planning only—confirm live capacity with the hospital."
+        ]
+    },
+    {
+        "intent": "bye",
+        "utterances": [
+            "Bye",
+            "Goodbye",
+            "See you",
+            "Ciao",
+            "Signing off",
+            "Exit"
+        ],
+        "answers": [
+            "Goodbye! Stay safe.",
+            "See you later. Stay healthy!",
+            "Bye! Don't hesitate to return if you need assistance."
+        ]
+    }
+]

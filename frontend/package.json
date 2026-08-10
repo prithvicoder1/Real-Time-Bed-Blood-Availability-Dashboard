@@ -1,0 +1,8 @@
+{
+  "name": "carebridge-vanilla-ui",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {"dev":"vite","build":"vite build","test":"npm run build","preview":"vite preview"},
+  "devDependencies": {"vite":"^7.3.1"}
+}

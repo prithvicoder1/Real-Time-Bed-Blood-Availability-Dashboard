@@ -1,36 +1,48 @@
-version: '3.8'
-
 services:
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
-      - "5000:5000"
+      - "5001:5001"
     environment:
-      - MONGO_URI=mongodb://mongo:27017/carebridge
+      - DATABASE_URL=postgresql://carebridge:carebridge@postgres:5432/carebridge
+      - JWT_SECRET=local-development-only-change-me
     depends_on:
-      - mongo
+      - postgres
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - ./backend:/app/backend
+      - /app/backend/node_modules
 
   frontend:
     build: ./frontend
     ports:
-      - "3000:5173"
+      - "5173:5173"
     environment:
-      - VITE_API_URL=http://localhost:5000
+      - VITE_API_URL=http://localhost:5001
+      - VITE_PROXY_TARGET=http://backend:5001
     depends_on:
       - backend
     volumes:
       - ./frontend:/app
       - /app/node_modules
 
-  mongo:
-    image: mongo:latest
+  postgres:
+    image: postgres:17-alpine
     ports:
-      - "27017:27017"
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=carebridge
+      - POSTGRES_PASSWORD=carebridge
+      - POSTGRES_DB=carebridge
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carebridge"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     volumes:
-      - mongo-data:/data/db
+      - postgres-data:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
 
 volumes:
-  mongo-data:
+  postgres-data:

@@ -1,0 +1,11 @@
+{
+  "mae": 1.021,
+  "rmse": 1.288,
+  "r2": 0.99,
+  "baseline_mae": 1.985,
+  "training_rows": 92120,
+  "test_rows": 23040,
+  "split": "chronological_80_20",
+  "dataset": "privacy_safe_simulation",
+  "suitable_for_clinical_use": false
+}

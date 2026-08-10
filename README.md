@@ -1,137 +1,63 @@
-<div align="center">
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  
-  <br />
-  <br />
-  
-  <h1>🏥 CareBridge</h1>
-  <p><strong>Every Second Counts. CareBridge Connects.</strong></p>
-  <p><em>An intelligent, real-time emergency medical response and hospital resource management platform.</em></p>
-</div>
+# CareBridge — real-time bed & blood coordination
 
----
+CareBridge is an Amity University hackathon project for coordinating hospital beds, blood inventory, ambulances, facility verification, and capacity forecasts through patient, hospital, and administrator portals.
 
-## 📖 About CareBridge
+## Stack
 
-In emergencies, time is the ultimate currency. **CareBridge** eliminates the critical delays caused by disorganized information during medical crises. It acts as a centralized bridge connecting patients directly to life-saving resources—like ICU beds, oxygen supplies, blood banks, and instant ambulance dispatches—all powered by real-time data and AI assistance.
+- Semantic HTML5, responsive CSS and dependency-free browser JavaScript (Vite is used only for development/build)
+- Node.js, Express, Socket.IO and a confidence-aware NLP assistant
+- PostgreSQL 17 with JSONB inventory snapshots and audit records
+- Python, pandas, NumPy and scikit-learn forecasting
+- Docker Compose for a reproducible local stack
 
-Whether you're a patient seeking urgent care or a hospital managing incoming emergencies, CareBridge ensures seamless coordination.
-
----
-
-## ✨ Key Features
-
-### 🌟 For Patients & Users
-*   **Live Resource Tracking**: View real-time availability of ICU beds, Oxygen beds, General wards, and Ventilators across a network of registered hospitals.
-*   **Live Hospital Map**: Interactive map integration to find the nearest hospitals with verified visual indicators.
-*   **Instant Ambulance Booking**: One-click access to dispatch emergency (108) or transport (102) ambulances based on the severity of the situation.
-*   **Blood Bank Network**: Search for specific blood types (e.g., O+, AB-) instantly.
-*   **CareBot AI**: An intelligent, natural language chatbot trained to provide immediate First Aid instructions (CPR, burns, strokes) and guide users to the right resources.
-
-### 🏥 For Hospitals & Admins
-*   **Hospital Portal**: Secure, authenticated dashboard for hospital staff to manage their live inventory (beds, blood, specialties).
-*   **Verification System**: Integrated certificate upload and validation system to ensure a 100% verified hospital network.
-*   **Admin Oversee**: Comprehensive admin panel to manage the platform, users, and connected medical facilities.
-
----
-
-## 🛠️ Technology Stack
-
-CareBridge is built using the robust **MERN** stack, augmented with modern tooling for real-time capabilities and AI.
-
-### Frontend
-*   **React.js**: Modular, component-driven UI.
-*   **Vite**: Ultra-fast build tool and development server.
-*   **React-Leaflet**: Interactive map rendering and geolocation.
-*   **Lucide React**: Clean, modern iconography.
-*   **Socket.io-client**: Real-time websocket connections for instant dashboard updates.
-
-### Backend
-*   **Node.js & Express.js**: Scalable REST API architecture.
-*   **MongoDB (Mongoose)**: NoSQL database for flexible storage of hospital and user records.
-*   **Socket.io**: Enabling real-time, bidirectional communication between hospitals and patient dashboards.
-*   **Natural (NLP)**: Machine learning library powering the CareBot AI's intent recognition and responses.
-*   **JWT & Bcrypt**: Secure authentication and password hashing.
-*   **Multer**: Handling secure medical certificate uploads.
-
----
-
-## 🚀 Getting Started
-
-Follow these steps to set up CareBridge on your local machine.
-
-### Prerequisites
-*   Node.js (v18 or higher recommended)
-*   MongoDB (Local instance or Atlas URI)
-*   Git
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/carebridge.git
-cd carebridge
-```
-
-### 2. Backend Setup
-Navigate to the backend directory, install dependencies, and start the server.
+## Quick start with Docker
 
 ```bash
-cd backend
-npm install
+cp .env.example .env
+docker compose up --build
 ```
 
-Create a `.env` file in the `backend` directory:
-```env
-PORT=5001
-MONGO_URI=mongodb://localhost:27017/carebridge
-JWT_SECRET=your_super_secret_key
-```
+Open `http://localhost:5173`. The API health endpoint is `http://localhost:5001/api/health`.
 
-Start the backend development server:
-```bash
-npm run dev
-# The server will start on http://localhost:5001
-# Note: CareBridge includes a fallback mechanism. If MongoDB is unavailable, it will automatically switch to a comprehensive 'Mock Data' mode covering 50+ hospitals.
-```
-
-### 3. Frontend Setup
-Open a new terminal, navigate to the frontend directory, install dependencies, and start the Vite server.
+## Local development
 
 ```bash
-cd frontend
-npm install
-npm run dev
-# The application will launch on http://localhost:5173
+cd backend && npm install && npm start
+cd frontend && npm install && npm run dev
 ```
 
----
+Set `DATABASE_URL`, `JWT_SECRET`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` from `.env.example`. When PostgreSQL is unavailable, the API deliberately falls back to clearly labelled demonstration inventory so the hackathon preview stays usable.
 
-## 🤖 CareBot AI Interaction
+## Train and test the ML model
 
-CareBridge features an integrated NLP chatbot trained to handle high-stress situations. It categorizes user input into specific intents:
-*   **Emergency Advice**: Recognizes symptoms and trauma (Heart Attack, Stroke, Choking, Bleeding) and instantly provides critical First Aid/CPR steps.
-*   **Resource Navigation**: Understands requests like "I need an ICU bed" or "Where is O- blood?" and dynamically points the user to live dashboard tracking.
+```bash
+cd ml
+python3 -m pip install -r requirements.txt
+python3 train.py
+python3 -m unittest -v test_model.py
+```
 
----
+The training command creates both `occupancy_model.pkl` and `occupancy_model.joblib`, plus `model_metrics.json`. The notebook `occupancy_training.ipynb` documents the same workflow. The default dataset is deterministic, privacy-safe simulation. To use governed data:
 
-## 🤝 Contributing
+```bash
+python3 train.py --data data/authorised_inventory.csv
+```
 
-We welcome contributions to make CareBridge even better!
-1. Fork the project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+The input contract and privacy requirements are documented in `ml/data/README.md`. Reported demo accuracy must never be presented as clinical validation.
 
----
+## Verification workflow
 
-## 📄 License
+Certificate screening records file integrity, document metadata, registry identifiers and risk signals. It always returns a manual-review status. Facility identity should be checked against the ABDM Health Facility Registry and accreditation identifiers against the issuing authority; automated screening is not proof that a certificate is genuine.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## Quality checks
 
----
-<div align="center">
-  <p>Built with ❤️ to save lives.</p>
-</div>
+```bash
+cd frontend && npm test
+cd ../backend && npm test
+cd ../ml && python3 -m unittest -v test_model.py
+docker compose config --quiet
+```
+
+## Data sources and limitations
+
+CareBridge distinguishes live partner feeds from demonstration data. Useful authoritative sources for a production pilot include the ABDM Health Facility Registry for facility identity and India's Open Government Data Platform for aggregate infrastructure reference data. Public aggregate datasets are not substitutes for hospital-provided real-time bed or blood inventory.
