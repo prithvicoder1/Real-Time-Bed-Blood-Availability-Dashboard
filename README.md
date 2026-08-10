@@ -5,7 +5,7 @@ CareBridge is an Amity University hackathon project for coordinating hospital be
 ## Stack
 
 - Semantic HTML5, responsive CSS and dependency-free browser JavaScript (Vite is used only for development/build)
-- Node.js, Express, Socket.IO and a confidence-aware NLP assistant
+- Node.js, Express and a confidence-aware NLP assistant
 - PostgreSQL 17 with JSONB inventory snapshots and audit records
 - Python, pandas, NumPy and scikit-learn forecasting
 - Docker Compose for a reproducible local stack
@@ -18,6 +18,7 @@ docker compose up --build
 ```
 
 Open `http://localhost:5173`. The API health endpoint is `http://localhost:5001/api/health`.
+PostgreSQL is available to local database clients on port `5433` (the containers communicate on the standard internal port `5432`).
 
 ## Local development
 
