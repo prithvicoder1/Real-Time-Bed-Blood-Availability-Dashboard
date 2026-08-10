@@ -1,0 +1,10 @@
+{
+  "training_examples": 381,
+  "evaluation_examples": 127,
+  "intents": 18,
+  "cv_folds": 3,
+  "cv_accuracy_mean": 0.496,
+  "cv_accuracy_std": 0.028,
+  "engine": "word_and_character_tfidf_logistic_regression",
+  "suitable_for_medical_diagnosis": false
+}

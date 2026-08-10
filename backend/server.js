@@ -128,15 +128,15 @@ app.get('/api/analyze',(req,res)=>{
 
 app.post('/api/chat',async(req,res)=>{
   if(!String(req.body.message||'').trim())return res.status(400).json({message:'Message required'});
-  const answer=chatbot.getResponse(req.body.message);
+  const answer=await chatbot.getResponse(req.body.message);
   if(['blood_availability','bed_availability','location_query'].includes(answer.intent)){
-    const facilities=await listHospitals().catch(()=>demoHospitals);
+    const facilities=await listHospitals().catch(()=>demoHospitals);const message=String(req.body.message).toLowerCase();const requestedLocation=[...new Set(facilities.flatMap(item=>[item.city,item.state]).filter(Boolean))].find(location=>message.includes(location.toLowerCase()));const localFacilities=requestedLocation?facilities.filter(item=>[item.city,item.state].some(value=>value?.toLowerCase()===requestedLocation.toLowerCase())):facilities;
     if(answer.intent==='blood_availability'){
       const requested=(String(req.body.message).toUpperCase().match(/\b(?:A|B|AB|O)[+-]\b/)||['O-'])[0];
-      const matches=facilities.filter(item=>(item.blood?.[requested]||0)>0).sort((a,b)=>b.blood[requested]-a.blood[requested]).slice(0,3);
+      const matches=localFacilities.filter(item=>(item.blood?.[requested]||0)>0).sort((a,b)=>b.blood[requested]-a.blood[requested]).slice(0,3);
       answer.response=matches.length?`${requested} inventory: ${matches.map(item=>`${item.name} (${item.blood[requested]} units, ${item.city})`).join('; ')}. Call the hospital to confirm before travelling.`:`No ${requested} inventory is currently listed. Call 112 for an emergency and contact the nearest licensed blood bank.`;
     } else {
-      const matches=facilities.map(item=>({...item,available:Math.max(0,item.beds.total-item.beds.occupied)})).filter(item=>item.available>0).sort((a,b)=>b.available-a.available).slice(0,3);
+      const matches=localFacilities.map(item=>({...item,available:Math.max(0,item.beds.total-item.beds.occupied)})).filter(item=>item.available>0).sort((a,b)=>b.available-a.available).slice(0,3);
       answer.response=matches.length?`Listed bed capacity: ${matches.map(item=>`${item.name} (${item.available} beds, ${item.beds.icu||0} ICU, ${item.city})`).join('; ')}. Confirm availability directly before dispatch.`:'No available beds are currently listed. Call 112 for urgent assistance.';
     }
   }

@@ -154,6 +154,7 @@ dialog::backdrop{background:rgba(6,28,25,.62);backdrop-filter:blur(5px)}
 .auth-tabs button{border:0;background:none;padding:.8rem 1rem;color:var(--muted);font-weight:700}
 .auth-tabs button.active{color:var(--teal);border-bottom:2px solid var(--teal)}
 .portal-form{display:grid;gap:1rem;margin-top:1.2rem}
+.portal-form[hidden]{display:none}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .portal-form label{display:grid;gap:.4rem;font-size:.7rem;font-weight:700;color:var(--muted)}
 .portal-form input,.portal-form select,.portal-form textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:.75rem;background:white;color:var(--ink);font:inherit}

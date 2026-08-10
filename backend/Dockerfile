@@ -14,7 +14,7 @@ RUN pip3 install -r /app/ml/runtime-requirements.txt --break-system-packages
 COPY backend ./
 COPY ml /app/ml
 
-RUN python3 /app/ml/train.py
+RUN python3 /app/ml/train.py && python3 /app/ml/train_chatbot.py
 
 EXPOSE 5001
 

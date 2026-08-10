@@ -139,7 +139,7 @@
             "I want to list my hospital"
         ],
         "answers": [
-            "To register a hospital:\n1. Go to the 'Hospital Auth' page via the menu.\n2. Click 'Register here'.\n3. Fill in the hospital details and upload valid certificates.\n4. Once registered, you can log in to update your bed and blood inventory."
+            "To register a hospital, choose Portal login → Hospital operations → Register hospital. Enter the authorised facility details and create the account. The facility starts in pending review; sign in to update inventory and submit certificates for administrator verification."
         ]
     },
     {
