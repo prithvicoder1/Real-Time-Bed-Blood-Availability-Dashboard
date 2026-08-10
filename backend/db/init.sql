@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS hospitals (
   longitude DOUBLE PRECISION,
   facility_type TEXT NOT NULL DEFAULT 'Private',
   hfr_id TEXT,
+  phone TEXT,
+  license_number TEXT,
   verification_status TEXT NOT NULL DEFAULT 'self_declared',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -54,3 +56,6 @@ CREATE TABLE IF NOT EXISTS audit_events (
   metadata JSONB NOT NULL DEFAULT '{}'::jsonb,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS phone TEXT;
+ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS license_number TEXT;

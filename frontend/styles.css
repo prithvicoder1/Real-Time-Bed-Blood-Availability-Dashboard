@@ -163,7 +163,20 @@ dialog::backdrop{background:rgba(6,28,25,.62);backdrop-filter:blur(5px)}
 .portal-form .consent input{width:auto;margin-top:.15rem}
 .form-status{display:block;min-height:1.2rem;color:var(--teal);font-size:.72rem}
 .form-status.error{color:var(--red)}
+.workspace{min-height:100vh;background:var(--paper);color:var(--ink)}
+.workspace[hidden]{display:none}
+.workspace-head{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,4vw,4rem);background:white;border-bottom:1px solid var(--line)}
+.workspace-body{max-width:1300px;margin:auto;padding:4rem clamp(1rem,4vw,4rem)}
+.workspace-title{margin-bottom:2rem}.workspace-title h1{font-size:clamp(2.4rem,5vw,4.8rem);line-height:1;margin:.5rem 0}.workspace-title p{color:var(--muted)}
+.workspace-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;align-items:start}
+.workspace-card{background:white;border:1px solid var(--line);border-radius:18px;padding:1.5rem;box-shadow:0 12px 40px rgba(12,50,45,.06)}
+.workspace-card h2{font-size:1.35rem}.workspace-card h3{font-size:.8rem;margin-top:.5rem}
+.blood-inputs{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.2rem}.admin-stat{padding:1.3rem;background:var(--ink);color:white;border-radius:16px}.admin-stat b{display:block;font-size:2rem;color:var(--lime)}.admin-stat span{font-size:.65rem;color:#a9bfba}
+.admin-list{display:grid;gap:.7rem;margin-top:1rem}.admin-row{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem;border:1px solid var(--line);border-radius:12px}.admin-row p{color:var(--muted);font-size:.7rem}.admin-actions{display:flex;gap:.5rem}.admin-actions button{padding:.55rem .8rem;border-radius:8px;border:1px solid var(--line);background:white;font-weight:700}.admin-actions .approve{background:var(--teal);color:white}
+.card-heading{display:flex;justify-content:space-between;align-items:center}
 @media(max-width:650px){.form-grid{grid-template-columns:1fr}.portal-form .full{grid-column:auto}}
+@media(max-width:800px){.workspace-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.blood-inputs{grid-template-columns:repeat(2,1fr)}.admin-row{align-items:flex-start;flex-direction:column}}
 @media(max-width:980px){.topbar nav{display:none}
 .menu{display:block}
 .hero,.forecast-section,.verify-section{grid-template-columns:1fr}

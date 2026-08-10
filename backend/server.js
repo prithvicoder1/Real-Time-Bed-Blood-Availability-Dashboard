@@ -44,6 +44,8 @@ function authenticate(role) {
 
 async function seedDemoData() {
   if (dbStatus() !== 'connected') return;
+  await pool.query('ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS phone TEXT');
+  await pool.query('ALTER TABLE hospitals ADD COLUMN IF NOT EXISTS license_number TEXT');
   await pool.query("DELETE FROM hospitals WHERE verification_status IN ('demo','public_directory')");
   for (const h of demoHospitals) {
     await pool.query(`INSERT INTO hospitals(id,name,email,city,state,address,latitude,longitude,facility_type,verification_status)
@@ -103,9 +105,18 @@ app.post('/api/hospitals/login', async (req,res)=>{
 });
 
 app.get('/api/hospitals/me',authenticate('hospital'),async(req,res)=>{
-  const result=await pool.query('SELECT id,name,email,city,state,address,facility_type,hfr_id,verification_status,created_at FROM hospitals WHERE id=$1',[req.user.id]);
+  const result=await pool.query('SELECT id,name,email,city,state,address,facility_type,hfr_id,phone,license_number,verification_status,created_at FROM hospitals WHERE id=$1',[req.user.id]);
   if(!result.rowCount)return res.status(404).json({message:'Hospital account not found'});res.json(result.rows[0]);
 });
+
+app.patch('/api/hospitals/me',authenticate('hospital'),async(req,res)=>{
+  const phone=String(req.body.phone||'').trim();const license=String(req.body.licenseNumber||'').trim();const hfr=String(req.body.hfrId||'').trim();const address=String(req.body.address||'').trim();
+  if(phone&&!/^[+0-9 ()-]{7,20}$/.test(phone))return res.status(400).json({message:'Enter a valid phone number'});
+  const result=await pool.query(`UPDATE hospitals SET phone=$1,license_number=$2,hfr_id=$3,address=COALESCE(NULLIF($4,''),address),updated_at=NOW() WHERE id=$5 RETURNING id,name,email,city,state,address,facility_type,hfr_id,phone,license_number,verification_status`,[phone||null,license||null,hfr||null,address,req.user.id]);
+  await pool.query(`INSERT INTO audit_events(actor_id,action,entity_type,entity_id) VALUES($1,'hospital_profile_updated','hospital',$1)`,[req.user.id]);res.json(result.rows[0]);
+});
+
+app.get('/api/hospitals/me/resources',authenticate('hospital'),async(req,res)=>{const result=await pool.query('SELECT * FROM resource_snapshots WHERE hospital_id=$1 ORDER BY recorded_at DESC LIMIT 1',[req.user.id]);res.json(result.rows[0]||null)});
 
 app.put('/api/hospitals/:id/resources',authenticate('hospital'),async(req,res)=>{
   if(req.user.id!==req.params.id)return res.status(403).json({message:'Cannot update another facility'});
@@ -155,6 +166,9 @@ app.post('/api/certificates',authenticate('hospital'),upload.single('certificate
 });
 
 app.get('/api/admin/audit',authenticate('admin'),async(_req,res)=>{if(dbStatus()!=='connected')return res.json([]);res.json((await pool.query('SELECT * FROM audit_events ORDER BY created_at DESC LIMIT 100')).rows)});
+app.get('/api/admin/dashboard',authenticate('admin'),async(_req,res)=>{const [facilities,pending,snapshots,certificates]=await Promise.all([pool.query('SELECT COUNT(*)::int count FROM hospitals'),pool.query("SELECT COUNT(*)::int count FROM hospitals WHERE verification_status='pending_review'"),pool.query('SELECT COUNT(*)::int count FROM resource_snapshots'),pool.query("SELECT COUNT(*)::int count FROM certificates WHERE review_status='manual_review'")]);res.json({facilities:facilities.rows[0].count,pendingHospitals:pending.rows[0].count,inventorySnapshots:snapshots.rows[0].count,pendingCertificates:certificates.rows[0].count})});
+app.get('/api/admin/hospitals',authenticate('admin'),async(req,res)=>{const status=String(req.query.status||'');const result=status?await pool.query('SELECT id,name,email,city,state,facility_type,hfr_id,phone,license_number,verification_status,created_at FROM hospitals WHERE verification_status=$1 ORDER BY created_at DESC',[status]):await pool.query('SELECT id,name,email,city,state,facility_type,hfr_id,phone,license_number,verification_status,created_at FROM hospitals ORDER BY created_at DESC LIMIT 200');res.json(result.rows)});
+app.patch('/api/admin/hospitals/:id/verification',authenticate('admin'),async(req,res)=>{const status=String(req.body.status||'');if(!['approved','rejected','pending_review'].includes(status))return res.status(400).json({message:'Invalid verification status'});const result=await pool.query('UPDATE hospitals SET verification_status=$1,updated_at=NOW() WHERE id=$2 RETURNING id,name,verification_status',[status,req.params.id]);if(!result.rowCount)return res.status(404).json({message:'Hospital not found'});await pool.query(`INSERT INTO audit_events(actor_id,action,entity_type,entity_id,metadata) VALUES($1,'hospital_verification_changed','hospital',$2,$3)`,[req.user.email,req.params.id,JSON.stringify({status})]);res.json(result.rows[0])});
 app.use((err,_req,res,_next)=>res.status(err.code==='LIMIT_FILE_SIZE'?413:500).json({message:err.message||'Unexpected server error'}));
 
 async function start(){await connectDB();await seedDemoData();await chatbot.train();app.listen(PORT,'0.0.0.0',()=>console.log(`CareBridge API listening on ${PORT}`));}
