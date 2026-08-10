@@ -1,69 +1,167 @@
-# CareBridge — real-time bed & blood coordination
+<div align="center">
 
-CareBridge coordinates hospital beds, blood inventory, ambulances, facility verification, and capacity forecasts through patient, hospital, and administrator portals.
+# CareBridge
 
-## Stack
+### Find capacity. Coordinate care.
 
-- Semantic HTML5, responsive CSS and dependency-free browser JavaScript (Vite is used only for development/build)
-- Node.js, Express and a confidence-aware NLP assistant
-- PostgreSQL 17 with JSONB inventory snapshots and audit records
-- Python, pandas, NumPy and scikit-learn forecasting
-- Docker Compose for a reproducible local stack
+An emergency capacity network for discovering hospital beds and blood inventory, forecasting near-term occupancy, registering facilities, and reviewing operational evidence.
 
-## Quick start with Docker
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Open_CareBridge-00a88f?style=for-the-badge)](https://carebridge-92bh.onrender.com/)
+[![API Health](https://img.shields.io/badge/API-Health_Check-b8ff4f?style=for-the-badge)](https://carebridge-92bh.onrender.com/api/health)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ed?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/prithvicoder1/CareBridge/blob/main/backend/Dockerfile)
+[![Render](https://img.shields.io/badge/Deploy-Render-7656ff?style=for-the-badge&logo=render&logoColor=white)](https://render.com/deploy)
+
+</div>
+
+[![CareBridge live dashboard](docs/assets/carebridge-dashboard.png)](https://carebridge-92bh.onrender.com/)
+
+> [!IMPORTANT]
+> CareBridge is an operational demonstration, not a clinical decision system. Directory identities are based on public records, but bundled bed and blood values are simulated unless a verified hospital feed is connected. Confirm availability directly with the facility and call **112** for life-threatening emergencies.
+
+## Live application
+
+**Production URL:** [https://carebridge-92bh.onrender.com/](https://carebridge-92bh.onrender.com/)
+
+The deployed application provides one responsive interface for patients, hospitals, and network administrators. It currently loads 150 facility directory records and exposes its runtime state through [`/api/health`](https://carebridge-92bh.onrender.com/api/health).
+
+## What CareBridge does
+
+- **Nationwide facility discovery** — search 150 hospital directory records by hospital, city, state, resource, or blood group.
+- **Bed and blood visibility** — compare total and occupied beds, ICU capacity, oxygen beds, and all eight blood groups.
+- **14-hour occupancy forecasting** — turn current occupancy into a simple pressure forecast with stable, monitor, high, and critical bands.
+- **Hospital registration portal** — facilities can create accounts, maintain contact and licence details, and publish inventory updates.
+- **Certificate screening** — capture issuer and registry identifiers, generate SHA-256 fingerprints, and surface explainable risk signals for manual review.
+- **Network administration** — review pending hospitals, approve or reject registrations, inspect aggregate statistics, and audit recent changes.
+- **CareBot assistant** — answer resource and workflow questions with confidence-aware NLP and live directory context.
+- **Emergency workflow** — keep the national emergency number and safety-first guidance immediately accessible.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    U["Patient / Hospital / Administrator"] --> UI["HTML + CSS + JavaScript UI"]
+    UI --> API["Node.js + Express API"]
+    API --> DB["PostgreSQL"]
+    API --> NLP["CareBot NLP model"]
+    API --> ML["scikit-learn occupancy model"]
+    API --> DIR["150-facility directory"]
+    API --> VERIFY["Certificate screening"]
+```
+
+The production Docker image builds the Vite frontend and serves it from Express. The browser and `/api` therefore use the same Render domain, avoiding cross-origin configuration and separate frontend hosting.
+
+## Technology stack
+
+| Layer | Technology |
+| --- | --- |
+| Frontend | Semantic HTML5, responsive CSS, dependency-free JavaScript, Vite |
+| API | Node.js, Express, JWT, bcrypt, Multer |
+| Database | PostgreSQL 17, JSONB inventory snapshots, `BYTEA` certificate storage |
+| Machine learning | Python, pandas, NumPy, scikit-learn, joblib |
+| NLP | Word and character TF-IDF with logistic regression and confidence fallback |
+| Infrastructure | Docker, Docker Compose, Render Blueprint |
+
+## Machine-learning workflow
+
+The occupancy pipeline uses a time-aware training and evaluation workflow:
+
+1. Validate an authorised dataset or generate the deterministic privacy-safe demonstration dataset.
+2. Engineer occupancy, time, weekday, weather, holiday, and facility-type features.
+3. Train with a chronological 80/20 split to avoid future-to-past leakage.
+4. Compare the model against a persistence baseline.
+5. Export reproducible `.pkl` and `.joblib` artifacts plus JSON metrics.
+
+The bundled demonstration model reports an R² of `0.990` and MAE of `1.021` percentage points on simulated holdout data. These numbers demonstrate pipeline behaviour; they are **not clinical validation or evidence of real-world accuracy**.
+
+Training notebooks:
+
+- [`ml/occupancy_training.ipynb`](ml/occupancy_training.ipynb) — forecasting workflow, evaluation, and model card.
+- [`ml/chatbot_training.ipynb`](ml/chatbot_training.ipynb) — CareBot intent training and evaluation.
+
+## Run locally with Docker
 
 ```bash
+git clone https://github.com/prithvicoder1/CareBridge.git
+cd CareBridge
 cp .env.example .env
 docker compose up --build
 ```
 
-Open `http://localhost:5173`. The API health endpoint is `http://localhost:5001/api/health`.
-PostgreSQL is available to local database clients on port `5433` (the containers communicate on the standard internal port `5432`).
+Open:
+
+- Application: [http://localhost:5173](http://localhost:5173)
+- API health: [http://localhost:5001/api/health](http://localhost:5001/api/health)
+- PostgreSQL client port: `5433` (`5432` inside Docker)
 
 ## Local development
 
+Start the backend and frontend in separate terminals:
+
 ```bash
-cd backend && npm install && npm start
-cd frontend && npm install && npm run dev
+cd backend
+npm install
+npm start
 ```
 
-Set `DATABASE_URL`, `JWT_SECRET`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` from `.env.example`. When PostgreSQL is unavailable, the public directory deliberately falls back to clearly labelled demonstration inventory.
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-## Deploy to Render
+Create `.env` from [`.env.example`](.env.example) and set secure values for:
 
-The root `render.yaml` creates a free Docker web service and a free managed PostgreSQL database. In Render, choose **New → Blueprint**, connect this repository, and apply the Blueprint. Render asks for `ADMIN_EMAIL` and `ADMIN_PASSWORD`; use a strong, unique password.
+```env
+DATABASE_URL=postgresql://carebridge:carebridge@localhost:5432/carebridge
+JWT_SECRET=replace-with-a-long-random-secret
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=replace-with-a-strong-password
+```
 
-The Docker service builds the Vite frontend and serves it from Express, so the UI and `/api` share one public URL. The API applies `backend/db/init.sql` during startup and seeds the bundled public directory when the database is empty.
-
-### Where data is stored
-
-- Hospital accounts, resource snapshots, certificate metadata, and audit events are stored in PostgreSQL through `DATABASE_URL`. Locally this is the `postgres_data` Docker volume; on Render it is the managed `carebridge-db` database.
-- Uploaded PDF/JPG/PNG certificate files and their metadata are stored in PostgreSQL, avoiding Render's paid persistent-disk requirement.
-- The 150 bundled directory records and simulated demonstration inventory live in `backend/data/hospitals.json`; they are copied into PostgreSQL on startup.
-- Trained ML artifacts are versioned in `ml/` and embedded in the Docker image. They are not database records.
-
-Render's free web service sleeps after inactivity, and its free PostgreSQL database expires after 30 days. Upgrade or move the database before that deadline if the stored hospital and certificate data must be retained.
-
-## Train and test the ML model
+## Train and test
 
 ```bash
 cd ml
 python3 -m pip install -r requirements.txt
 python3 train.py
+python3 train_chatbot.py
 python3 -m unittest -v test_model.py
 ```
 
-The training command creates both `occupancy_model.pkl` and `occupancy_model.joblib`, plus `model_metrics.json`. The notebook `occupancy_training.ipynb` documents the same workflow. The default dataset is deterministic, privacy-safe simulation. To use governed data:
+To train the forecast model on governed data:
 
 ```bash
 python3 train.py --data data/authorised_inventory.csv
 ```
 
-The input contract and privacy requirements are documented in `ml/data/README.md`. Reported demo accuracy must never be presented as clinical validation.
+The required columns, validation rules, and privacy expectations are documented in [`ml/data/README.md`](ml/data/README.md).
 
-## Verification workflow
+## Data storage
 
-Certificate screening records file integrity, document metadata, registry identifiers and risk signals. It always returns a manual-review status. Facility identity should be checked against the ABDM Health Facility Registry and accreditation identifiers against the issuing authority; automated screening is not proof that a certificate is genuine.
+| Data | Local development | Render deployment |
+| --- | --- | --- |
+| Hospital accounts and profiles | PostgreSQL `postgres_data` volume | Managed `carebridge-db` PostgreSQL |
+| Bed and blood snapshots | PostgreSQL | Managed PostgreSQL |
+| Certificate files and metadata | PostgreSQL | Managed PostgreSQL |
+| Audit events | PostgreSQL | Managed PostgreSQL |
+| Public directory seed | `backend/data/hospitals.json` | Docker image, seeded into PostgreSQL |
+| Trained model artifacts | `ml/` | Docker image |
+
+Passwords are stored as bcrypt hashes. Certificate uploads are stored in PostgreSQL so the free Render web service does not depend on an ephemeral filesystem.
+
+## Deploy with Render
+
+The repository includes [`render.yaml`](render.yaml). To create the full free-tier preview stack:
+
+1. In Render, select **New → Blueprint**.
+2. Connect `prithvicoder1/CareBridge` and select `main`.
+3. Enter secure values for `ADMIN_EMAIL` and `ADMIN_PASSWORD`.
+4. Apply the Blueprint.
+
+The Blueprint creates the Docker web service and PostgreSQL database, generates `JWT_SECRET`, connects `DATABASE_URL`, runs the database schema automatically, and checks `/api/health`.
+
+> [!NOTE]
+> Render free web services sleep after inactivity. Free Render PostgreSQL databases expire after 30 days and do not include backups. Upgrade or migrate the database before the deadline if the information must be retained.
 
 ## Quality checks
 
@@ -74,8 +172,31 @@ cd ../ml && python3 -m unittest -v test_model.py
 docker compose config --quiet
 ```
 
-## Data sources and limitations
+The production Docker image is also smoke-tested against the homepage and `/api/health` before release.
 
-CareBridge distinguishes live partner feeds from demonstration data. Useful authoritative sources for a production pilot include the ABDM Health Facility Registry for facility identity and India's Open Government Data Platform for aggregate infrastructure reference data. Public aggregate datasets are not substitutes for hospital-provided real-time bed or blood inventory.
+## Data sources and responsible use
 
-The bundled directory contains 150 public facility identity/location records from the National Hospital Directory layer published through Living Atlas India. Refresh it with `cd backend && npm run sync:hospitals`. Because that directory does not publish live inventory, every generated bed and blood value is explicitly labelled `simulated_demo` in the dataset and UI.
+The bundled directory contains 150 public facility identity and location records derived from the National Hospital Directory layer published through Living Atlas India. Refresh it with:
+
+```bash
+cd backend
+npm run sync:hospitals
+```
+
+The directory does not provide live bed or blood availability. Generated inventory is therefore labelled `simulated_demo` throughout the API and interface. A production deployment should use governed, timestamped hospital feeds, verify facility identity through ABDM HFR, and validate accreditation data with its issuing authority.
+
+## Repository structure
+
+```text
+CareBridge/
+├── backend/          Express API, PostgreSQL schema, chatbot and directory
+├── frontend/         HTML, CSS and JavaScript interface
+├── ml/               notebooks, training code, tests and model artifacts
+├── docs/assets/      README media
+├── docker-compose.yml
+└── render.yaml       Render Blueprint
+```
+
+## Licence
+
+This project is released under the [MIT License](LICENSE).
