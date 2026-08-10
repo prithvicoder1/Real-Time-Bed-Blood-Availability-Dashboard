@@ -1,8 +1,4502 @@
 [
- {"id":"del1","name":"AIIMS Delhi","email":"demo-aiims@carebridge.invalid","city":"Delhi","state":"Delhi","location":"Ansari Nagar","lat":28.5672,"lng":77.21,"type":"Government","beds":{"total":450,"occupied":380,"icu":50,"oxygen":100},"blood":{"A+":100,"B+":80,"O+":120,"AB+":40,"A-":20,"B-":15,"O-":10,"AB-":5}},
- {"id":"del2","name":"Safdarjung Hospital","email":"demo-safdarjung@carebridge.invalid","city":"Delhi","state":"Delhi","location":"Safdarjung Enclave","lat":28.5677,"lng":77.2065,"type":"Government","beds":{"total":350,"occupied":300,"icu":30,"oxygen":80},"blood":{"A+":60,"B+":50,"O+":70,"AB+":25,"A-":10,"B-":8,"O-":5,"AB-":3}},
- {"id":"mum1","name":"Tata Memorial Hospital","email":"demo-tata@carebridge.invalid","city":"Mumbai","state":"Maharashtra","location":"Parel","lat":19.003,"lng":72.844,"type":"Government","beds":{"total":630,"occupied":600,"icu":40,"oxygen":70},"blood":{"A+":110,"B+":95,"O+":130,"AB+":45,"A-":22,"B-":18,"O-":11,"AB-":7}},
- {"id":"mum2","name":"KEM Hospital","email":"demo-kem@carebridge.invalid","city":"Mumbai","state":"Maharashtra","location":"Parel","lat":18.9984,"lng":72.842,"type":"Government","beds":{"total":1800,"occupied":1700,"icu":45,"oxygen":90},"blood":{"A+":95,"B+":85,"O+":115,"AB+":40,"A-":19,"B-":16,"O-":10,"AB-":6}},
- {"id":"blr1","name":"Manipal Hospital Bangalore","email":"demo-manipal@carebridge.invalid","city":"Bengaluru","state":"Karnataka","location":"HAL Airport Road","lat":12.9576,"lng":77.645,"type":"Private","beds":{"total":650,"occupied":550,"icu":95,"oxygen":140},"blood":{"A+":175,"B+":155,"O+":210,"AB+":72,"A-":35,"B-":30,"O-":18,"AB-":12}},
- {"id":"che1","name":"Apollo Hospital Chennai","email":"demo-apollo@carebridge.invalid","city":"Chennai","state":"Tamil Nadu","location":"Greams Road","lat":13.0569,"lng":80.2497,"type":"Private","beds":{"total":550,"occupied":480,"icu":90,"oxygen":135},"blood":{"A+":165,"B+":145,"O+":200,"AB+":68,"A-":33,"B-":28,"O-":17,"AB-":11}}
+  {
+    "id": "nhd-1",
+    "name": "THIRUPATHUR UPHC",
+    "email": "nhd-1@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "1 THIRUPATHUR UPHC, Govt.Gardan Road",
+    "lat": 12.492635,
+    "lng": 78.564177,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 55,
+      "occupied": 50,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-2",
+    "name": "UTHANGARAI",
+    "email": "nhd-2@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Government Hospital, Uthangarai, Uthangarai",
+    "lat": 12.266359,
+    "lng": 78.535451,
+    "type": "Sub-District Hospital",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 326,
+      "occupied": 319,
+      "icu": 16,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 45,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 66,
+      "AB-": 43
+    }
+  },
+  {
+    "id": "nhd-3",
+    "name": "JAYANTHI",
+    "email": "nhd-3@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "NO. 16/4, THRAIYUR ROAD, MUSIRI",
+    "lat": 11.045766,
+    "lng": 78.511082,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 117,
+      "occupied": 98,
+      "icu": 5,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 25,
+      "A-": 2,
+      "B+": 9,
+      "B-": 16,
+      "O+": 23,
+      "O-": 0,
+      "AB+": 7,
+      "AB-": 14
+    }
+  },
+  {
+    "id": "nhd-4",
+    "name": "KUMARAN",
+    "email": "nhd-4@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "NO. 120, TRICHY ROAD,TURAIYUR, TURAIYUR",
+    "lat": 11.193647,
+    "lng": 78.559638,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 58,
+      "occupied": 46,
+      "icu": 6,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 26,
+      "A-": 3,
+      "B+": 10,
+      "B-": 17,
+      "O+": 24,
+      "O-": 1,
+      "AB+": 8,
+      "AB-": 15
+    }
+  },
+  {
+    "id": "nhd-5",
+    "name": "Sendarapatti",
+    "email": "nhd-5@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "HEALTH SUB CENTRE, SENDARAPATTY",
+    "lat": 11.4393011,
+    "lng": 78.5266893,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 89,
+      "occupied": 80,
+      "icu": 7,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 27,
+      "A-": 4,
+      "B+": 11,
+      "B-": 18,
+      "O+": 25,
+      "O-": 2,
+      "AB+": 9,
+      "AB-": 16
+    }
+  },
+  {
+    "id": "nhd-6",
+    "name": "Rachandarthirumalai",
+    "email": "nhd-6@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "sub centre, RACHANDATHIRUMALAI",
+    "lat": 10.76132,
+    "lng": 78.537691,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 30,
+      "occupied": 24,
+      "icu": 8,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 28,
+      "A-": 5,
+      "B+": 12,
+      "B-": 19,
+      "O+": 26,
+      "O-": 3,
+      "AB+": 10,
+      "AB-": 17
+    }
+  },
+  {
+    "id": "nhd-7",
+    "name": "Eragudi",
+    "email": "nhd-7@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Eragudi- Health Sub Centre, Eragudi",
+    "lat": 11.186759,
+    "lng": 78.505027,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 61,
+      "occupied": 46,
+      "icu": 9,
+      "oxygen": 2
+    },
+    "blood": {
+      "A+": 29,
+      "A-": 6,
+      "B+": 13,
+      "B-": 20,
+      "O+": 27,
+      "O-": 4,
+      "AB+": 11,
+      "AB-": 18
+    }
+  },
+  {
+    "id": "nhd-8",
+    "name": "Periyalampatti",
+    "email": "nhd-8@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Maternity Hut, Periyalampatti",
+    "lat": 10.687393,
+    "lng": 78.526905,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 92,
+      "occupied": 80,
+      "icu": 10,
+      "oxygen": 3
+    },
+    "blood": {
+      "A+": 0,
+      "A-": 7,
+      "B+": 14,
+      "B-": 21,
+      "O+": 28,
+      "O-": 5,
+      "AB+": 12,
+      "AB-": 19
+    }
+  },
+  {
+    "id": "nhd-9",
+    "name": "Athipallam",
+    "email": "nhd-9@directory.carebridge.invalid",
+    "city": "Pudukkottai",
+    "state": "Tamil Nadu",
+    "location": "health sub centre, vanathirayanpatti village",
+    "lat": 10.611506,
+    "lng": 78.514259,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 33,
+      "occupied": 23,
+      "icu": 11,
+      "oxygen": 4
+    },
+    "blood": {
+      "A+": 1,
+      "A-": 8,
+      "B+": 15,
+      "B-": 22,
+      "O+": 29,
+      "O-": 6,
+      "AB+": 13,
+      "AB-": 20
+    }
+  },
+  {
+    "id": "nhd-10",
+    "name": "Athurkuppam",
+    "email": "nhd-10@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Athurkuppam HSC, Jangalapuram",
+    "lat": 12.576486,
+    "lng": 78.559817,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 103,
+      "occupied": 78,
+      "icu": 3,
+      "oxygen": 4
+    },
+    "blood": {
+      "A+": 11,
+      "A-": 18,
+      "B+": 25,
+      "B-": 2,
+      "O+": 9,
+      "O-": 16,
+      "AB+": 23,
+      "AB-": 0
+    }
+  },
+  {
+    "id": "nhd-11",
+    "name": "Ambalur",
+    "email": "nhd-11@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Ambalur HSC, Ambalur",
+    "lat": 12.661784,
+    "lng": 78.56392,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 44,
+      "occupied": 38,
+      "icu": 4,
+      "oxygen": 5
+    },
+    "blood": {
+      "A+": 12,
+      "A-": 19,
+      "B+": 26,
+      "B-": 3,
+      "O+": 10,
+      "O-": 17,
+      "AB+": 24,
+      "AB-": 1
+    }
+  },
+  {
+    "id": "nhd-12",
+    "name": "Koppampatti",
+    "email": "nhd-12@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Health Sub Centre, Koppampatti",
+    "lat": 11.295858,
+    "lng": 78.497215,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 75,
+      "occupied": 56,
+      "icu": 5,
+      "oxygen": 6
+    },
+    "blood": {
+      "A+": 13,
+      "A-": 20,
+      "B+": 27,
+      "B-": 4,
+      "O+": 11,
+      "O-": 18,
+      "AB+": 25,
+      "AB-": 2
+    }
+  },
+  {
+    "id": "nhd-13",
+    "name": "Paithur",
+    "email": "nhd-13@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Attur to Thavalapatti road, Paithur main road",
+    "lat": 11.513817,
+    "lng": 78.554728,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 106,
+      "occupied": 80,
+      "icu": 6,
+      "oxygen": 7
+    },
+    "blood": {
+      "A+": 14,
+      "A-": 21,
+      "B+": 28,
+      "B-": 5,
+      "O+": 12,
+      "O-": 19,
+      "AB+": 26,
+      "AB-": 3
+    }
+  },
+  {
+    "id": "nhd-14",
+    "name": "Gasinaickenpatti",
+    "email": "nhd-14@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Gasinaickenpatti HSC, Gasinaickenpatti",
+    "lat": 12.475127,
+    "lng": 78.536239,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 47,
+      "occupied": 34,
+      "icu": 7,
+      "oxygen": 8
+    },
+    "blood": {
+      "A+": 15,
+      "A-": 22,
+      "B+": 29,
+      "B-": 6,
+      "O+": 13,
+      "O-": 20,
+      "AB+": 27,
+      "AB-": 4
+    }
+  },
+  {
+    "id": "nhd-15",
+    "name": "Kunnathur",
+    "email": "nhd-15@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Kunnathur",
+    "lat": 12.345642,
+    "lng": 78.512129,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-16",
+    "name": "Oliyamangalam",
+    "email": "nhd-16@directory.carebridge.invalid",
+    "city": "Pudukkottai",
+    "state": "Tamil Nadu",
+    "location": "OLIYAMANGALAM, OLIYAMANGALAM",
+    "lat": 10.419107,
+    "lng": 78.538873,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-17",
+    "name": "Vettapattu",
+    "email": "nhd-17@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Vettapattu HSC, Vettapattu",
+    "lat": 12.565223,
+    "lng": 78.52212,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-18",
+    "name": "Kalkudi",
+    "email": "nhd-18@directory.carebridge.invalid",
+    "city": "Pudukkottai",
+    "state": "Tamil Nadu",
+    "location": "health sub centre, kalkudi",
+    "lat": 10.67276,
+    "lng": 78.537299,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-19",
+    "name": "Mukkanoor",
+    "email": "nhd-19@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Mukkanoor HSC, Mukkanoor",
+    "lat": 12.507594,
+    "lng": 78.535339,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-20",
+    "name": "Adhiyur",
+    "email": "nhd-20@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Adhiyur HSC, Adhiyur",
+    "lat": 12.465915,
+    "lng": 78.56234,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 44,
+      "occupied": 38,
+      "icu": 4,
+      "oxygen": 5
+    },
+    "blood": {
+      "A+": 12,
+      "A-": 19,
+      "B+": 26,
+      "B-": 3,
+      "O+": 10,
+      "O-": 17,
+      "AB+": 24,
+      "AB-": 1
+    }
+  },
+  {
+    "id": "nhd-21",
+    "name": "Keeripatti",
+    "email": "nhd-21@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Primary Health Centre,Keeripatti, Keeripatti",
+    "lat": 11.536045,
+    "lng": 78.489757,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 75,
+      "occupied": 56,
+      "icu": 5,
+      "oxygen": 6
+    },
+    "blood": {
+      "A+": 13,
+      "A-": 20,
+      "B+": 27,
+      "B-": 4,
+      "O+": 11,
+      "O-": 18,
+      "AB+": 25,
+      "AB-": 2
+    }
+  },
+  {
+    "id": "nhd-22",
+    "name": "Hungenahalli",
+    "email": "nhd-22@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE BUILDING",
+    "lat": 13.0487,
+    "lng": 77.9912,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 106,
+      "occupied": 80,
+      "icu": 6,
+      "oxygen": 7
+    },
+    "blood": {
+      "A+": 14,
+      "A-": 21,
+      "B+": 28,
+      "B-": 5,
+      "O+": 12,
+      "O-": 19,
+      "AB+": 26,
+      "AB-": 3
+    }
+  },
+  {
+    "id": "nhd-23",
+    "name": "Chinna Kodunthurai",
+    "email": "nhd-23@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Govt.building, chinnakodunthurai,",
+    "lat": 10.950151,
+    "lng": 78.538244,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 47,
+      "occupied": 34,
+      "icu": 7,
+      "oxygen": 8
+    },
+    "blood": {
+      "A+": 15,
+      "A-": 22,
+      "B+": 29,
+      "B-": 6,
+      "O+": 13,
+      "O-": 20,
+      "AB+": 27,
+      "AB-": 4
+    }
+  },
+  {
+    "id": "nhd-24",
+    "name": "Thirumalaisamudram",
+    "email": "nhd-24@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Health sub centre, thirumalaisamuthiram",
+    "lat": 11.6312072,
+    "lng": 78.5018556,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-25",
+    "name": "V.A.Samudram",
+    "email": "nhd-25@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "V.A.SAMUTHIRAM HSC, V.A.samuthiram village",
+    "lat": 11.172718,
+    "lng": 78.507515,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-26",
+    "name": "T.Murungapatti",
+    "email": "nhd-26@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Health Sub Centre, T.Murungapatti",
+    "lat": 11.366776,
+    "lng": 78.491532,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-27",
+    "name": "Sepalapatti",
+    "email": "nhd-27@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "PRIMARY HEALTH CENTER, SEPLAPATTY",
+    "lat": 10.8149,
+    "lng": 78.5521,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-28",
+    "name": "Nayanacheruvu",
+    "email": "nhd-28@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Nayanacheruvu HSC, Nayanacheruvu",
+    "lat": 12.615242,
+    "lng": 78.497136,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-29",
+    "name": "Mallankuppam",
+    "email": "nhd-29@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "Mallankuppam HSC, Mallankuppam",
+    "lat": 12.625173,
+    "lng": 78.550469,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-30",
+    "name": "Uthangarai II",
+    "email": "nhd-30@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Uthangarai Town Panchyat",
+    "lat": 12.267437,
+    "lng": 78.535129,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 75,
+      "occupied": 56,
+      "icu": 5,
+      "oxygen": 6
+    },
+    "blood": {
+      "A+": 13,
+      "A-": 20,
+      "B+": 27,
+      "B-": 4,
+      "O+": 11,
+      "O-": 18,
+      "AB+": 25,
+      "AB-": 2
+    }
+  },
+  {
+    "id": "nhd-31",
+    "name": "Shitheri",
+    "email": "nhd-31@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "SITHERI, SITHERI",
+    "lat": 11.8992,
+    "lng": 78.5088,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 106,
+      "occupied": 80,
+      "icu": 6,
+      "oxygen": 7
+    },
+    "blood": {
+      "A+": 14,
+      "A-": 21,
+      "B+": 28,
+      "B-": 5,
+      "O+": 12,
+      "O-": 19,
+      "AB+": 26,
+      "AB-": 3
+    }
+  },
+  {
+    "id": "nhd-32",
+    "name": "Naripadi",
+    "email": "nhd-32@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "HEALTH SUB CENTRE, NARIPADI",
+    "lat": 11.411089,
+    "lng": 78.564779,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 47,
+      "occupied": 34,
+      "icu": 7,
+      "oxygen": 8
+    },
+    "blood": {
+      "A+": 15,
+      "A-": 22,
+      "B+": 29,
+      "B-": 6,
+      "O+": 13,
+      "O-": 20,
+      "AB+": 27,
+      "AB-": 4
+    }
+  },
+  {
+    "id": "nhd-33",
+    "name": "Kondayampalli",
+    "email": "nhd-33@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "9/139,HEALTH SUB CENTRE, KONDAIYAMPALLI",
+    "lat": 11.458353,
+    "lng": 78.523043,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-34",
+    "name": "Edayapatti",
+    "email": "nhd-34@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "danida, EDAYAPATTI",
+    "lat": 11.752954,
+    "lng": 78.492062,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-35",
+    "name": "Murukur",
+    "email": "nhd-35@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Murugur HSC, Murugur Village",
+    "lat": 11.176839,
+    "lng": 78.565324,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-36",
+    "name": "Sirunavalur",
+    "email": "nhd-36@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Health Sub Center Building -Sirunavalur, Sirunavalur",
+    "lat": 11.211535,
+    "lng": 78.488336,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-37",
+    "name": "PEDDUR",
+    "email": "nhd-37@directory.carebridge.invalid",
+    "city": "Chittoor District",
+    "state": "Andhra Pradesh",
+    "location": "89 pedduru",
+    "lat": 12.773718,
+    "lng": 78.541517,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-38",
+    "name": "Vishnampettai",
+    "email": "nhd-38@directory.carebridge.invalid",
+    "city": "Thanjavur",
+    "state": "Tamil Nadu",
+    "location": "Health Subcentre, Budalur",
+    "lat": 10.517248,
+    "lng": 78.560642,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-39",
+    "name": "Sendarapatti",
+    "email": "nhd-39@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "PRIMARY HEALTH CENTRE, SENDARAPATTY",
+    "lat": 11.4379,
+    "lng": 78.5246,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-40",
+    "name": "Karapattu",
+    "email": "nhd-40@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "\\N, Karapattu",
+    "lat": 12.36314,
+    "lng": 78.54266,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 106,
+      "occupied": 80,
+      "icu": 6,
+      "oxygen": 7
+    },
+    "blood": {
+      "A+": 14,
+      "A-": 21,
+      "B+": 28,
+      "B-": 5,
+      "O+": 12,
+      "O-": 19,
+      "AB+": 26,
+      "AB-": 3
+    }
+  },
+  {
+    "id": "nhd-41",
+    "name": "Kottapalayam",
+    "email": "nhd-41@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "2/396 B, Kottapalayam",
+    "lat": 11.259332,
+    "lng": 78.490112,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 47,
+      "occupied": 34,
+      "icu": 7,
+      "oxygen": 8
+    },
+    "blood": {
+      "A+": 15,
+      "A-": 22,
+      "B+": 29,
+      "B-": 6,
+      "O+": 13,
+      "O-": 20,
+      "AB+": 27,
+      "AB-": 4
+    }
+  },
+  {
+    "id": "nhd-42",
+    "name": "Kongavembu",
+    "email": "nhd-42@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "Kongavembu building, Kongavembu",
+    "lat": 12.137081,
+    "lng": 78.515132,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-43",
+    "name": "Amoor",
+    "email": "nhd-43@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Govt.building, Amoor",
+    "lat": 10.925207,
+    "lng": 78.546141,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-44",
+    "name": "Sivagangapuram",
+    "email": "nhd-44@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Middle School Sivagangapuram, Middle School Sivagangapuram",
+    "lat": 11.664101,
+    "lng": 78.550382,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-45",
+    "name": "Sikathambur",
+    "email": "nhd-45@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Sikkathambur HSC, Sikkathambur",
+    "lat": 11.200572,
+    "lng": 78.556752,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-46",
+    "name": "Malayalapatti",
+    "email": "nhd-46@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "SS Building, Malayalapatti",
+    "lat": 11.7876464,
+    "lng": 78.5383157,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-47",
+    "name": "S.Pallipattu",
+    "email": "nhd-47@directory.carebridge.invalid",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "location": "S.Pallipattu, S. Pallipattu",
+    "lat": 12.466475,
+    "lng": 78.560467,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-48",
+    "name": "Kothampadi",
+    "email": "nhd-48@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Jari Kothampadi, Rail road near",
+    "lat": 11.62595,
+    "lng": 78.538187,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-49",
+    "name": "V.A.Samudram",
+    "email": "nhd-49@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "19360, Venkatammalsamudram, Kamachipuram",
+    "lat": 11.19535,
+    "lng": 78.511492,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 115,
+      "occupied": 102,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-50",
+    "name": "Selliampalayam",
+    "email": "nhd-50@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Ramanaickenpalayam road, Thambi durai Hospital",
+    "lat": 11.616483,
+    "lng": 78.560934,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 47,
+      "occupied": 34,
+      "icu": 7,
+      "oxygen": 8
+    },
+    "blood": {
+      "A+": 15,
+      "A-": 22,
+      "B+": 29,
+      "B-": 6,
+      "O+": 13,
+      "O-": 20,
+      "AB+": 27,
+      "AB-": 4
+    }
+  },
+  {
+    "id": "nhd-51",
+    "name": "Pikkili",
+    "email": "nhd-51@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "HSC Pakka Building, Pikkili",
+    "lat": 12.239766,
+    "lng": 78.008883,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-52",
+    "name": "Velur",
+    "email": "nhd-52@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Velur Govt. Hospital, Velur",
+    "lat": 11.108557,
+    "lng": 78.009078,
+    "type": "Sub-District Hospital",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 259,
+      "occupied": 255,
+      "icu": 33,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 54,
+      "B+": 31,
+      "B-": 38,
+      "O+": 75,
+      "O-": 52,
+      "AB+": 59,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-53",
+    "name": "Seelapadi",
+    "email": "nhd-53@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "Seelapadi PHC, Seelapadi",
+    "lat": 10.388227,
+    "lng": 78.014202,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-54",
+    "name": "SEMANDAPATTI",
+    "email": "nhd-54@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "PHC SEMANDAPATTI, SEMANDAPATTI",
+    "lat": 11.789688,
+    "lng": 78.026453,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-55",
+    "name": "UFWC Tadipatri",
+    "email": "nhd-55@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "14/132, Tadipatri",
+    "lat": 14.907027,
+    "lng": 78.00927,
+    "type": "Urban Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-56",
+    "name": "SUGAM NURSING HOME",
+    "email": "nhd-56@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Opp. To Betel Market, Paramathi Velur",
+    "lat": 11.112119,
+    "lng": 78.004445,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-57",
+    "name": "T.S.DEEPA Nursing Home,Paramathi- Velur",
+    "email": "nhd-57@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "115, Paramathi Velur",
+    "lat": 11.110654,
+    "lng": 78.007026,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-58",
+    "name": "Madderi",
+    "email": "nhd-58@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUB CENTRE MADDERI, MADDERI",
+    "lat": 13.254,
+    "lng": 78.0305,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 115,
+      "occupied": 102,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-59",
+    "name": "Suriyampalayam",
+    "email": "nhd-59@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Health sub centre - Suriyampalayam, Suriyampalayam",
+    "lat": 11.166514,
+    "lng": 78.01559,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 56,
+      "occupied": 50,
+      "icu": 4,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 15,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 6,
+      "AB-": 13
+    }
+  },
+  {
+    "id": "nhd-60",
+    "name": "Odaiyandahalli",
+    "email": "nhd-60@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Odayandahalli",
+    "lat": 12.476165,
+    "lng": 78.016685,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 78,
+      "occupied": 72,
+      "icu": 8,
+      "oxygen": 9
+    },
+    "blood": {
+      "A+": 16,
+      "A-": 23,
+      "B+": 0,
+      "B-": 7,
+      "O+": 14,
+      "O-": 21,
+      "AB+": 28,
+      "AB-": 5
+    }
+  },
+  {
+    "id": "nhd-61",
+    "name": "Semminipatti",
+    "email": "nhd-61@directory.carebridge.invalid",
+    "city": "Madurai",
+    "state": "Tamil Nadu",
+    "location": "43877, Semminipatti",
+    "lat": 10.096292,
+    "lng": 77.989458,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-62",
+    "name": "Unichetti",
+    "email": "nhd-62@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Unichetti, Unichetty",
+    "lat": 12.61501,
+    "lng": 78.017398,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-63",
+    "name": "SHETTYHALLI",
+    "email": "nhd-63@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "shettihalli, shettihalli",
+    "lat": 13.4838,
+    "lng": 78.0221,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-64",
+    "name": "Sc M.M.Cross",
+    "email": "nhd-64@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "12145, M.M.Cross",
+    "lat": 14.003759,
+    "lng": 77.98748,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-65",
+    "name": "UPPARAPETE",
+    "email": "nhd-65@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Upparapete, 12",
+    "lat": 13.4044,
+    "lng": 78.0031,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-66",
+    "name": "Ondiveeranur",
+    "email": "nhd-66@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "PHC ONDIVEERANUR, ONDIVEERANUR",
+    "lat": 11.8263,
+    "lng": 78.0013,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-67",
+    "name": "Chettiapatti",
+    "email": "nhd-67@directory.carebridge.invalid",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "location": "Govt Health Sub Centre, Chettiapatti",
+    "lat": 10.396348,
+    "lng": 78.032738,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 115,
+      "occupied": 102,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-68",
+    "name": "Sc Mudigubba-II",
+    "email": "nhd-68@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "4-186, MUDIGUBBA 2",
+    "lat": 14.348649,
+    "lng": 77.99385,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 56,
+      "occupied": 50,
+      "icu": 4,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 15,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 6,
+      "AB-": 13
+    }
+  },
+  {
+    "id": "nhd-69",
+    "name": "Koodacheri",
+    "email": "nhd-69@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "1/170, Nadhamadu",
+    "lat": 11.216869,
+    "lng": 78.020509,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 87,
+      "occupied": 80,
+      "icu": 5,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 25,
+      "A-": 2,
+      "B+": 9,
+      "B-": 16,
+      "O+": 23,
+      "O-": 0,
+      "AB+": 7,
+      "AB-": 14
+    }
+  },
+  {
+    "id": "nhd-70",
+    "name": "Sikkampatti",
+    "email": "nhd-70@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Sub Centre, Periyakadampatty",
+    "lat": 11.712438,
+    "lng": 77.987061,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 109,
+      "occupied": 100,
+      "icu": 9,
+      "oxygen": 10
+    },
+    "blood": {
+      "A+": 17,
+      "A-": 24,
+      "B+": 1,
+      "B-": 8,
+      "O+": 15,
+      "O-": 22,
+      "AB+": 29,
+      "AB-": 6
+    }
+  },
+  {
+    "id": "nhd-71",
+    "name": "Thimmampalli",
+    "email": "nhd-71@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "3-122, Thimmampalli",
+    "lat": 14.621729,
+    "lng": 78.003127,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-72",
+    "name": "Kulathurpatti",
+    "email": "nhd-72@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "Health Sub Centre",
+    "lat": 10.943575,
+    "lng": 78.001343,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-73",
+    "name": "Pachanampatti",
+    "email": "nhd-73@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Sub Centre, Pachanampatty",
+    "lat": 11.74648,
+    "lng": 78.024335,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-74",
+    "name": "Thannerpanthampatti",
+    "email": "nhd-74@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "Thannerpanthampatti",
+    "lat": 10.513631,
+    "lng": 78.033909,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-75",
+    "name": "Chwodenahalli",
+    "email": "nhd-75@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUB CENTRE CHOWDENAHALLI, CHOWDENAHALLI",
+    "lat": 13.1567,
+    "lng": 78.0131,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-76",
+    "name": "Oviampalayam",
+    "email": "nhd-76@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "HSC, Kelakkarai Near Oviyampalayam",
+    "lat": 11.160621,
+    "lng": 78.03296,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 115,
+      "occupied": 102,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-77",
+    "name": "BURUDUGUNTE (24X7)",
+    "email": "nhd-77@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Burudugunte, 0",
+    "lat": 13.5933,
+    "lng": 78.0322,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 56,
+      "occupied": 50,
+      "icu": 4,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 15,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 6,
+      "AB-": 13
+    }
+  },
+  {
+    "id": "nhd-78",
+    "name": "R.Vellodu",
+    "email": "nhd-78@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "\\N, R.Vellodu",
+    "lat": 10.750232,
+    "lng": 78.022268,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 87,
+      "occupied": 80,
+      "icu": 5,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 25,
+      "A-": 2,
+      "B+": 9,
+      "B-": 16,
+      "O+": 23,
+      "O-": 0,
+      "AB+": 7,
+      "AB-": 14
+    }
+  },
+  {
+    "id": "nhd-79",
+    "name": "Sc Kavetisamudram",
+    "email": "nhd-79@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "Kaveti Samudram",
+    "lat": 14.967494,
+    "lng": 78.006728,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 118,
+      "occupied": 107,
+      "icu": 6,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 26,
+      "A-": 3,
+      "B+": 10,
+      "B-": 17,
+      "O+": 24,
+      "O-": 1,
+      "AB+": 8,
+      "AB-": 15
+    }
+  },
+  {
+    "id": "nhd-80",
+    "name": "Chukkalur",
+    "email": "nhd-80@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "chukkalur",
+    "lat": 14.946929,
+    "lng": 77.98527,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 50,
+      "occupied": 34,
+      "icu": 10,
+      "oxygen": 11
+    },
+    "blood": {
+      "A+": 18,
+      "A-": 25,
+      "B+": 2,
+      "B-": 9,
+      "O+": 16,
+      "O-": 23,
+      "AB+": 0,
+      "AB-": 7
+    }
+  },
+  {
+    "id": "nhd-81",
+    "name": "PAPATHIMMANAHALLI",
+    "email": "nhd-81@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Papathimmanahalli, 13",
+    "lat": 13.5649,
+    "lng": 77.9988,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-82",
+    "name": "Chinnathirupathi",
+    "email": "nhd-82@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "HSC Chinnathirupathi, Chinnathirupathi",
+    "lat": 11.8324167,
+    "lng": 78.0290278,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-83",
+    "name": "Somanahalli",
+    "email": "nhd-83@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "",
+    "lat": 12.07928,
+    "lng": 78.02955,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-84",
+    "name": "Purahalli",
+    "email": "nhd-84@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE PURAHALLI, PURAHALLI",
+    "lat": 13.2081,
+    "lng": 78.0239,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-85",
+    "name": "Mallasamudram",
+    "email": "nhd-85@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Primary Health Centre, Mallasamudram",
+    "lat": 11.4871,
+    "lng": 78.0316,
+    "type": "Community Health Center",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 145,
+      "occupied": 106,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 53,
+      "A-": 30,
+      "B+": 7,
+      "B-": 44,
+      "O+": 21,
+      "O-": 58,
+      "AB+": 35,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-86",
+    "name": "Karumanur",
+    "email": "nhd-86@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Community Participated building, RAMAPURAM",
+    "lat": 11.455126,
+    "lng": 78.001599,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 56,
+      "occupied": 50,
+      "icu": 4,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 15,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 6,
+      "AB-": 13
+    }
+  },
+  {
+    "id": "nhd-87",
+    "name": "Koodacheri",
+    "email": "nhd-87@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Primary Health Centre, Koodacheri",
+    "lat": 11.2168,
+    "lng": 78.018571,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 87,
+      "occupied": 80,
+      "icu": 5,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 25,
+      "A-": 2,
+      "B+": 9,
+      "B-": 16,
+      "O+": 23,
+      "O-": 0,
+      "AB+": 7,
+      "AB-": 14
+    }
+  },
+  {
+    "id": "nhd-88",
+    "name": "Berigai",
+    "email": "nhd-88@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "HSC-Berigai, Berigai",
+    "lat": 12.8010218,
+    "lng": 78.0124035,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 118,
+      "occupied": 107,
+      "icu": 6,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 26,
+      "A-": 3,
+      "B+": 10,
+      "B-": 17,
+      "O+": 24,
+      "O-": 1,
+      "AB+": 8,
+      "AB-": 15
+    }
+  },
+  {
+    "id": "nhd-89",
+    "name": "Nadoli",
+    "email": "nhd-89@directory.carebridge.invalid",
+    "city": "Satara",
+    "state": "Maharashtra",
+    "location": "\\N, Nadoli",
+    "lat": 17.363772,
+    "lng": 73.973793,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 59,
+      "occupied": 40,
+      "icu": 7,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 27,
+      "A-": 4,
+      "B+": 11,
+      "B-": 18,
+      "O+": 25,
+      "O-": 2,
+      "AB+": 9,
+      "AB-": 16
+    }
+  },
+  {
+    "id": "nhd-90",
+    "name": "Vemagal (24X7)",
+    "email": "nhd-90@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "PRIMARY HEALTH  CENTRE VEMAGAL, VEMAGAL",
+    "lat": 13.1928,
+    "lng": 78.0173,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 81,
+      "occupied": 68,
+      "icu": 11,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 19,
+      "A-": 26,
+      "B+": 3,
+      "B-": 10,
+      "O+": 17,
+      "O-": 24,
+      "AB+": 1,
+      "AB-": 8
+    }
+  },
+  {
+    "id": "nhd-91",
+    "name": "Hasandahalli",
+    "email": "nhd-91@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE HASANDAHALLI",
+    "lat": 12.8894,
+    "lng": 78.0263,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 112,
+      "occupied": 85,
+      "icu": 0,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 20,
+      "A-": 27,
+      "B+": 4,
+      "B-": 11,
+      "O+": 18,
+      "O-": 25,
+      "AB+": 2,
+      "AB-": 9
+    }
+  },
+  {
+    "id": "nhd-92",
+    "name": "Govindampalayam",
+    "email": "nhd-92@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "primary health centres, govindampalayam",
+    "lat": 10.9652,
+    "lng": 78.0309,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 53,
+      "occupied": 50,
+      "icu": 1,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 21,
+      "A-": 28,
+      "B+": 5,
+      "B-": 12,
+      "O+": 19,
+      "O-": 26,
+      "AB+": 3,
+      "AB-": 10
+    }
+  },
+  {
+    "id": "nhd-93",
+    "name": "KAIWARA (24X7)",
+    "email": "nhd-93@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Kaiwara, 3",
+    "lat": 13.3368,
+    "lng": 77.9896,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 84,
+      "occupied": 80,
+      "icu": 2,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 22,
+      "A-": 29,
+      "B+": 6,
+      "B-": 13,
+      "O+": 20,
+      "O-": 27,
+      "AB+": 4,
+      "AB-": 11
+    }
+  },
+  {
+    "id": "nhd-94",
+    "name": "Suriagoundampalayam",
+    "email": "nhd-94@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "DANIDA Building, Mallasamudram",
+    "lat": 11.486712,
+    "lng": 78.021973,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 115,
+      "occupied": 102,
+      "icu": 3,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 23,
+      "A-": 0,
+      "B+": 7,
+      "B-": 14,
+      "O+": 21,
+      "O-": 28,
+      "AB+": 5,
+      "AB-": 12
+    }
+  },
+  {
+    "id": "nhd-95",
+    "name": "S.Pudupalayam",
+    "email": "nhd-95@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "13912, S.Pudupalayam",
+    "lat": 11.27338,
+    "lng": 78.020966,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 56,
+      "occupied": 50,
+      "icu": 4,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 24,
+      "A-": 1,
+      "B+": 8,
+      "B-": 15,
+      "O+": 22,
+      "O-": 29,
+      "AB+": 6,
+      "AB-": 13
+    }
+  },
+  {
+    "id": "nhd-96",
+    "name": "C.Pudur",
+    "email": "nhd-96@directory.carebridge.invalid",
+    "city": "Madurai",
+    "state": "Tamil Nadu",
+    "location": "HSC C.Pudur, C.Pudur",
+    "lat": 10.026756,
+    "lng": 78.027356,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 87,
+      "occupied": 80,
+      "icu": 5,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 25,
+      "A-": 2,
+      "B+": 9,
+      "B-": 16,
+      "O+": 23,
+      "O-": 0,
+      "AB+": 7,
+      "AB-": 14
+    }
+  },
+  {
+    "id": "nhd-97",
+    "name": "Kottamariamamkoil",
+    "email": "nhd-97@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "Sub Centre, Kottamariyammankoil",
+    "lat": 11.73708056,
+    "lng": 78.02781667,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 118,
+      "occupied": 107,
+      "icu": 6,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 26,
+      "A-": 3,
+      "B+": 10,
+      "B-": 17,
+      "O+": 24,
+      "O-": 1,
+      "AB+": 8,
+      "AB-": 15
+    }
+  },
+  {
+    "id": "nhd-98",
+    "name": "Masthi-C",
+    "email": "nhd-98@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE MASTHI C",
+    "lat": 12.8697,
+    "lng": 77.9976,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 59,
+      "occupied": 40,
+      "icu": 7,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 27,
+      "A-": 4,
+      "B+": 11,
+      "B-": 18,
+      "O+": 25,
+      "O-": 2,
+      "AB+": 9,
+      "AB-": 16
+    }
+  },
+  {
+    "id": "nhd-99",
+    "name": "Marandahalli",
+    "email": "nhd-99@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "45, Marandahalli",
+    "lat": 12.3869,
+    "lng": 78.0043,
+    "type": "Community Health Center",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 210,
+      "occupied": 186,
+      "icu": 20,
+      "oxygen": 21
+    },
+    "blood": {
+      "A+": 58,
+      "A-": 35,
+      "B+": 12,
+      "B-": 49,
+      "O+": 26,
+      "O-": 3,
+      "AB+": 40,
+      "AB-": 17
+    }
+  },
+  {
+    "id": "nhd-100",
+    "name": "Sirumalaipalaiyur",
+    "email": "nhd-100@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "Sirumalaipalayur",
+    "lat": 10.239925,
+    "lng": 78.000741,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 61,
+      "occupied": 56,
+      "icu": 3,
+      "oxygen": 12
+    },
+    "blood": {
+      "A+": 29,
+      "A-": 6,
+      "B+": 13,
+      "B-": 20,
+      "O+": 27,
+      "O-": 4,
+      "AB+": 11,
+      "AB-": 18
+    }
+  },
+  {
+    "id": "nhd-101",
+    "name": "R.Vellodu",
+    "email": "nhd-101@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "\\N, R.Vellodu",
+    "lat": 10.7487,
+    "lng": 78.0225,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 92,
+      "occupied": 70,
+      "icu": 4,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 0,
+      "A-": 7,
+      "B+": 14,
+      "B-": 21,
+      "O+": 28,
+      "O-": 5,
+      "AB+": 12,
+      "AB-": 19
+    }
+  },
+  {
+    "id": "nhd-102",
+    "name": "A.Mallapuram",
+    "email": "nhd-102@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "A.Mallapuram, A.Mallapuram",
+    "lat": 12.3558194,
+    "lng": 78.0115435,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 33,
+      "occupied": 23,
+      "icu": 5,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 1,
+      "A-": 8,
+      "B+": 15,
+      "B-": 22,
+      "O+": 29,
+      "O-": 6,
+      "AB+": 13,
+      "AB-": 20
+    }
+  },
+  {
+    "id": "nhd-103",
+    "name": "CHELUR-C",
+    "email": "nhd-103@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Jalipigarapalli Village,Bagepalli Taluk,Chikballapura Dist",
+    "lat": 13.7402,
+    "lng": 78.029,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 64,
+      "occupied": 56,
+      "icu": 6,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 2,
+      "A-": 9,
+      "B+": 16,
+      "B-": 23,
+      "O+": 0,
+      "O-": 7,
+      "AB+": 14,
+      "AB-": 21
+    }
+  },
+  {
+    "id": "nhd-104",
+    "name": "Enusonai",
+    "email": "nhd-104@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "HSC-Enusonai, Enusonai",
+    "lat": 12.61501,
+    "lng": 78.017398,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 95,
+      "occupied": 89,
+      "icu": 7,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 3,
+      "A-": 10,
+      "B+": 17,
+      "B-": 24,
+      "O+": 1,
+      "O-": 8,
+      "AB+": 15,
+      "AB-": 22
+    }
+  },
+  {
+    "id": "nhd-105",
+    "name": "Mel Easalpatti",
+    "email": "nhd-105@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "112/7, Meleasalpatti",
+    "lat": 11.973215,
+    "lng": 78.028495,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  },
+  {
+    "id": "nhd-106",
+    "name": "Nandanur",
+    "email": "nhd-106@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "HEALTH SUB CENTRE, ESANATHAM",
+    "lat": 10.4907367,
+    "lng": 78.01575,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 67,
+      "occupied": 54,
+      "icu": 9,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 5,
+      "A-": 12,
+      "B+": 19,
+      "B-": 26,
+      "O+": 3,
+      "O-": 10,
+      "AB+": 17,
+      "AB-": 24
+    }
+  },
+  {
+    "id": "nhd-107",
+    "name": "Karupaiyanahlli",
+    "email": "nhd-107@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "Karubainahalli HSC, Karubainahalli",
+    "lat": 12.094424,
+    "lng": 77.986179,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 98,
+      "occupied": 71,
+      "icu": 10,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 6,
+      "A-": 13,
+      "B+": 20,
+      "B-": 27,
+      "O+": 4,
+      "O-": 11,
+      "AB+": 18,
+      "AB-": 25
+    }
+  },
+  {
+    "id": "nhd-108",
+    "name": "Kurugal",
+    "email": "nhd-108@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE KURUGAL, KURUGAL",
+    "lat": 13.1972,
+    "lng": 77.9864,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 39,
+      "occupied": 32,
+      "icu": 11,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 7,
+      "A-": 14,
+      "B+": 21,
+      "B-": 28,
+      "O+": 5,
+      "O-": 12,
+      "AB+": 19,
+      "AB-": 26
+    }
+  },
+  {
+    "id": "nhd-109",
+    "name": "KONAPALLI",
+    "email": "nhd-109@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Konapalli, 11",
+    "lat": 13.4079,
+    "lng": 78.0216,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 70,
+      "occupied": 60,
+      "icu": 0,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 8,
+      "A-": 15,
+      "B+": 22,
+      "B-": 29,
+      "O+": 6,
+      "O-": 13,
+      "AB+": 20,
+      "AB-": 27
+    }
+  },
+  {
+    "id": "nhd-110",
+    "name": "Nochiodaipatty",
+    "email": "nhd-110@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "Notchiodapatti, Notchiodapatti",
+    "lat": 10.305778,
+    "lng": 78.027928,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 92,
+      "occupied": 70,
+      "icu": 4,
+      "oxygen": 13
+    },
+    "blood": {
+      "A+": 0,
+      "A-": 7,
+      "B+": 14,
+      "B-": 21,
+      "O+": 28,
+      "O-": 5,
+      "AB+": 12,
+      "AB-": 19
+    }
+  },
+  {
+    "id": "nhd-111",
+    "name": "Chinnagummanur",
+    "email": "nhd-111@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "43831, Chinnagummanur",
+    "lat": 12.423362,
+    "lng": 78.020379,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 33,
+      "occupied": 23,
+      "icu": 5,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 1,
+      "A-": 8,
+      "B+": 15,
+      "B-": 22,
+      "O+": 29,
+      "O-": 6,
+      "AB+": 13,
+      "AB-": 20
+    }
+  },
+  {
+    "id": "nhd-112",
+    "name": "HUYILEDORE",
+    "email": "nhd-112@directory.carebridge.invalid",
+    "city": "Tumkur",
+    "state": "Karnataka",
+    "location": "Huyildori, Huyildori",
+    "lat": 13.653,
+    "lng": 76.7929,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 64,
+      "occupied": 56,
+      "icu": 6,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 2,
+      "A-": 9,
+      "B+": 16,
+      "B-": 23,
+      "O+": 0,
+      "O-": 7,
+      "AB+": 14,
+      "AB-": 21
+    }
+  },
+  {
+    "id": "nhd-113",
+    "name": "Sc Chowtikuntapalli",
+    "email": "nhd-113@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "20546, Chowtakuntapalli",
+    "lat": 14.109667,
+    "lng": 78.004646,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 95,
+      "occupied": 89,
+      "icu": 7,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 3,
+      "A-": 10,
+      "B+": 17,
+      "B-": 24,
+      "O+": 1,
+      "O-": 8,
+      "AB+": 15,
+      "AB-": 22
+    }
+  },
+  {
+    "id": "nhd-114",
+    "name": "Sc Settypalli",
+    "email": "nhd-114@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "30713, Settypalli",
+    "lat": 14.317637,
+    "lng": 78.023463,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  },
+  {
+    "id": "nhd-115",
+    "name": "Esanatham",
+    "email": "nhd-115@directory.carebridge.invalid",
+    "city": "Karur",
+    "state": "Tamil Nadu",
+    "location": "HEALTH SUB CENTRE, ESANATHAM",
+    "lat": 10.707683,
+    "lng": 78.002739,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 67,
+      "occupied": 54,
+      "icu": 9,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 5,
+      "A-": 12,
+      "B+": 19,
+      "B-": 26,
+      "O+": 3,
+      "O-": 10,
+      "AB+": 17,
+      "AB-": 24
+    }
+  },
+  {
+    "id": "nhd-116",
+    "name": "Mullipadi",
+    "email": "nhd-116@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "\\N, Mullipadi",
+    "lat": 10.398507,
+    "lng": 78.022799,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 98,
+      "occupied": 71,
+      "icu": 10,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 6,
+      "A-": 13,
+      "B+": 20,
+      "B-": 27,
+      "O+": 4,
+      "O-": 11,
+      "AB+": 18,
+      "AB-": 25
+    }
+  },
+  {
+    "id": "nhd-117",
+    "name": "Manickampalayam",
+    "email": "nhd-117@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Community Health Center, MANICKAMPALAYAM",
+    "lat": 11.325946,
+    "lng": 78.012404,
+    "type": "Community Health Center",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 69,
+      "occupied": 65,
+      "icu": 23,
+      "oxygen": 20
+    },
+    "blood": {
+      "A+": 37,
+      "A-": 14,
+      "B+": 51,
+      "B-": 28,
+      "O+": 5,
+      "O-": 42,
+      "AB+": 19,
+      "AB-": 56
+    }
+  },
+  {
+    "id": "nhd-118",
+    "name": "Amadagur",
+    "email": "nhd-118@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "4-2-A, AMADAGUR",
+    "lat": 13.88861,
+    "lng": 78.02167,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 70,
+      "occupied": 60,
+      "icu": 0,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 8,
+      "A-": 15,
+      "B+": 22,
+      "B-": 29,
+      "O+": 6,
+      "O-": 13,
+      "AB+": 20,
+      "AB-": 27
+    }
+  },
+  {
+    "id": "nhd-119",
+    "name": "Sc Singavaram",
+    "email": "nhd-119@directory.carebridge.invalid",
+    "city": "Anantapur District",
+    "state": "Andhra Pradesh",
+    "location": "1-63-1, Singavaram",
+    "lat": 14.598637,
+    "lng": 78.027387,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 101,
+      "occupied": 86,
+      "icu": 1,
+      "oxygen": 2
+    },
+    "blood": {
+      "A+": 9,
+      "A-": 16,
+      "B+": 23,
+      "B-": 0,
+      "O+": 7,
+      "O-": 14,
+      "AB+": 21,
+      "AB-": 28
+    }
+  },
+  {
+    "id": "nhd-120",
+    "name": "Shivarapattana",
+    "email": "nhd-120@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE BUILDING",
+    "lat": 13.0639,
+    "lng": 77.9931,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 33,
+      "occupied": 23,
+      "icu": 5,
+      "oxygen": 14
+    },
+    "blood": {
+      "A+": 1,
+      "A-": 8,
+      "B+": 15,
+      "B-": 22,
+      "O+": 29,
+      "O-": 6,
+      "AB+": 13,
+      "AB-": 20
+    }
+  },
+  {
+    "id": "nhd-121",
+    "name": "SHIVAPURA",
+    "email": "nhd-121@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "YERRAGUDI VILLAGE,BAGEPALLI TALUK,CHIKBALLAPURA DIST",
+    "lat": 13.7983,
+    "lng": 78.0227,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 64,
+      "occupied": 56,
+      "icu": 6,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 2,
+      "A-": 9,
+      "B+": 16,
+      "B-": 23,
+      "O+": 0,
+      "O-": 7,
+      "AB+": 14,
+      "AB-": 21
+    }
+  },
+  {
+    "id": "nhd-122",
+    "name": "Kulathur",
+    "email": "nhd-122@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "\\N, Kulathur",
+    "lat": 10.465752,
+    "lng": 78.030165,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 95,
+      "occupied": 89,
+      "icu": 7,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 3,
+      "A-": 10,
+      "B+": 17,
+      "B-": 24,
+      "O+": 1,
+      "O-": 8,
+      "AB+": 15,
+      "AB-": 22
+    }
+  },
+  {
+    "id": "nhd-123",
+    "name": "Bandahalli",
+    "email": "nhd-123@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "1/240, Bandahalli",
+    "lat": 12.110488,
+    "lng": 78.017181,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  },
+  {
+    "id": "nhd-124",
+    "name": "Semmanur",
+    "email": "nhd-124@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "DANIDA BUILLDING, SEMMANUR",
+    "lat": 11.8057767,
+    "lng": 77.996025,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 67,
+      "occupied": 54,
+      "icu": 9,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 5,
+      "A-": 12,
+      "B+": 19,
+      "B-": 26,
+      "O+": 3,
+      "O-": 10,
+      "AB+": 17,
+      "AB-": 24
+    }
+  },
+  {
+    "id": "nhd-125",
+    "name": "Rajenahalli",
+    "email": "nhd-125@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "SUBCENTRE BUILDING",
+    "lat": 12.9325,
+    "lng": 78.0189,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 98,
+      "occupied": 71,
+      "icu": 10,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 6,
+      "A-": 13,
+      "B+": 20,
+      "B-": 27,
+      "O+": 4,
+      "O-": 11,
+      "AB+": 18,
+      "AB-": 25
+    }
+  },
+  {
+    "id": "nhd-126",
+    "name": "MYLAPURA",
+    "email": "nhd-126@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Mylapura, 5",
+    "lat": 13.3668,
+    "lng": 78.0092,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 39,
+      "occupied": 32,
+      "icu": 11,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 7,
+      "A-": 14,
+      "B+": 21,
+      "B-": 28,
+      "O+": 5,
+      "O-": 12,
+      "AB+": 19,
+      "AB-": 26
+    }
+  },
+  {
+    "id": "nhd-127",
+    "name": "Nallampatti",
+    "email": "nhd-127@directory.carebridge.invalid",
+    "city": "Dindigul",
+    "state": "Tamil Nadu",
+    "location": "Nallampatti",
+    "lat": 10.333032,
+    "lng": 78.003745,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 70,
+      "occupied": 60,
+      "icu": 0,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 8,
+      "A-": 15,
+      "B+": 22,
+      "B-": 29,
+      "O+": 6,
+      "O-": 13,
+      "AB+": 20,
+      "AB-": 27
+    }
+  },
+  {
+    "id": "nhd-128",
+    "name": "Velayuthampalayam",
+    "email": "nhd-128@directory.carebridge.invalid",
+    "city": "Erode",
+    "state": "Tamil Nadu",
+    "location": "VELAYUTHAMPALAYAM HSC, RASAMPALAYAM",
+    "lat": 11.07871,
+    "lng": 77.999582,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 101,
+      "occupied": 86,
+      "icu": 1,
+      "oxygen": 2
+    },
+    "blood": {
+      "A+": 9,
+      "A-": 16,
+      "B+": 23,
+      "B-": 0,
+      "O+": 7,
+      "O-": 14,
+      "AB+": 21,
+      "AB-": 28
+    }
+  },
+  {
+    "id": "nhd-129",
+    "name": "PERUMACHANAHALLI",
+    "email": "nhd-129@directory.carebridge.invalid",
+    "city": "Chikkaballapura",
+    "state": "Karnataka",
+    "location": "Perumachanahalli, 7",
+    "lat": 13.3451,
+    "lng": 78.0182,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 42,
+      "occupied": 38,
+      "icu": 2,
+      "oxygen": 3
+    },
+    "blood": {
+      "A+": 10,
+      "A-": 17,
+      "B+": 24,
+      "B-": 1,
+      "O+": 8,
+      "O-": 15,
+      "AB+": 22,
+      "AB-": 29
+    }
+  },
+  {
+    "id": "nhd-130",
+    "name": "Ramapuram",
+    "email": "nhd-130@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Primary Health Centre, Ramapuram",
+    "lat": 11.437352,
+    "lng": 78.00573,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 64,
+      "occupied": 56,
+      "icu": 6,
+      "oxygen": 15
+    },
+    "blood": {
+      "A+": 2,
+      "A-": 9,
+      "B+": 16,
+      "B-": 23,
+      "O+": 0,
+      "O-": 7,
+      "AB+": 14,
+      "AB-": 21
+    }
+  },
+  {
+    "id": "nhd-131",
+    "name": "Kottamettupatti",
+    "email": "nhd-131@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "sub centre, Kottamettupatti",
+    "lat": 11.6815707,
+    "lng": 78.0263964,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 95,
+      "occupied": 89,
+      "icu": 7,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 3,
+      "A-": 10,
+      "B+": 17,
+      "B-": 24,
+      "O+": 1,
+      "O-": 8,
+      "AB+": 15,
+      "AB-": 22
+    }
+  },
+  {
+    "id": "nhd-132",
+    "name": "Linganampatti",
+    "email": "nhd-132@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "\\N, Linganampatti",
+    "lat": 12.550951,
+    "lng": 77.996433,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  },
+  {
+    "id": "nhd-133",
+    "name": "Pikkili",
+    "email": "nhd-133@directory.carebridge.invalid",
+    "city": "Dharmapuri",
+    "state": "Tamil Nadu",
+    "location": "HSC Pakka Building, Pikkili",
+    "lat": 12.244167,
+    "lng": 78.008224,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 67,
+      "occupied": 54,
+      "icu": 9,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 5,
+      "A-": 12,
+      "B+": 19,
+      "B-": 26,
+      "O+": 3,
+      "O-": 10,
+      "AB+": 17,
+      "AB-": 24
+    }
+  },
+  {
+    "id": "nhd-134",
+    "name": "Madderi (24X7)",
+    "email": "nhd-134@directory.carebridge.invalid",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "location": "PRIMARY HEALTH CENTRE   MADDERI, MADDERI",
+    "lat": 13.254,
+    "lng": 78.0305,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 98,
+      "occupied": 71,
+      "icu": 10,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 6,
+      "A-": 13,
+      "B+": 20,
+      "B-": 27,
+      "O+": 4,
+      "O-": 11,
+      "AB+": 18,
+      "AB-": 25
+    }
+  },
+  {
+    "id": "nhd-135",
+    "name": "Gummanur",
+    "email": "nhd-135@directory.carebridge.invalid",
+    "city": "Krishnagiri",
+    "state": "Tamil Nadu",
+    "location": "Gerigepalli",
+    "lat": 12.447201,
+    "lng": 78.014544,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 39,
+      "occupied": 32,
+      "icu": 11,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 7,
+      "A-": 14,
+      "B+": 21,
+      "B-": 28,
+      "O+": 5,
+      "O-": 12,
+      "AB+": 19,
+      "AB-": 26
+    }
+  },
+  {
+    "id": "nhd-136",
+    "name": "Pothanur",
+    "email": "nhd-136@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "1, POTHANUR",
+    "lat": 11.110144,
+    "lng": 77.997838,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 70,
+      "occupied": 60,
+      "icu": 0,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 8,
+      "A-": 15,
+      "B+": 22,
+      "B-": 29,
+      "O+": 6,
+      "O-": 13,
+      "AB+": 20,
+      "AB-": 27
+    }
+  },
+  {
+    "id": "nhd-137",
+    "name": "Erumaipatti",
+    "email": "nhd-137@directory.carebridge.invalid",
+    "city": "Salem",
+    "state": "Tamil Nadu",
+    "location": "DANIDA BUILLDING, ERUMAIPATTI",
+    "lat": 11.91755,
+    "lng": 78.01169,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 101,
+      "occupied": 86,
+      "icu": 1,
+      "oxygen": 2
+    },
+    "blood": {
+      "A+": 9,
+      "A-": 16,
+      "B+": 23,
+      "B-": 0,
+      "O+": 7,
+      "O-": 14,
+      "AB+": 21,
+      "AB-": 28
+    }
+  },
+  {
+    "id": "nhd-138",
+    "name": "Elachipalayam",
+    "email": "nhd-138@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Primary Health Centre, ELACHIPALAYAM",
+    "lat": 11.3824,
+    "lng": 78.0122,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 42,
+      "occupied": 38,
+      "icu": 2,
+      "oxygen": 3
+    },
+    "blood": {
+      "A+": 10,
+      "A-": 17,
+      "B+": 24,
+      "B-": 1,
+      "O+": 8,
+      "O-": 15,
+      "AB+": 22,
+      "AB-": 29
+    }
+  },
+  {
+    "id": "nhd-139",
+    "name": "Konnaiyar",
+    "email": "nhd-139@directory.carebridge.invalid",
+    "city": "Namakkal",
+    "state": "Tamil Nadu",
+    "location": "Health sub centre, KONNAIYAR",
+    "lat": 11.399914,
+    "lng": 78.027464,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 73,
+      "occupied": 60,
+      "icu": 3,
+      "oxygen": 4
+    },
+    "blood": {
+      "A+": 11,
+      "A-": 18,
+      "B+": 25,
+      "B-": 2,
+      "O+": 9,
+      "O-": 16,
+      "AB+": 23,
+      "AB-": 0
+    }
+  },
+  {
+    "id": "nhd-140",
+    "name": "Pazhugal UPHc",
+    "email": "nhd-140@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "Urban Primary Health Center, Pazhugal.",
+    "lat": 8.353727,
+    "lng": 77.18569,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 95,
+      "occupied": 89,
+      "icu": 7,
+      "oxygen": 16
+    },
+    "blood": {
+      "A+": 3,
+      "A-": 10,
+      "B+": 17,
+      "B-": 24,
+      "O+": 1,
+      "O-": 8,
+      "AB+": 15,
+      "AB-": 22
+    }
+  },
+  {
+    "id": "nhd-141",
+    "name": "KALIAKKAVILAI UPHC",
+    "email": "nhd-141@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "Urban Primary Health Center, Kaliyakkavilai.",
+    "lat": 8.324296,
+    "lng": 77.186696,
+    "type": "Primary Health Centre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  },
+  {
+    "id": "nhd-142",
+    "name": "Kurumathoor",
+    "email": "nhd-142@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "19/20B,, Kurumathoor",
+    "lat": 8.327531,
+    "lng": 77.190402,
+    "type": "SubCentre",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 67,
+      "occupied": 54,
+      "icu": 9,
+      "oxygen": 18
+    },
+    "blood": {
+      "A+": 5,
+      "A-": 12,
+      "B+": 19,
+      "B-": 26,
+      "O+": 3,
+      "O-": 10,
+      "AB+": 17,
+      "AB-": 24
+    }
+  },
+  {
+    "id": "nhd-143",
+    "name": "Geetha Hospital",
+    "email": "nhd-143@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "4//79, Kaliyakaviali & PO.",
+    "lat": 8.33216098,
+    "lng": 77.1730274,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 98,
+      "occupied": 71,
+      "icu": 10,
+      "oxygen": 19
+    },
+    "blood": {
+      "A+": 6,
+      "A-": 13,
+      "B+": 20,
+      "B-": 27,
+      "O+": 4,
+      "O-": 11,
+      "AB+": 18,
+      "AB-": 25
+    }
+  },
+  {
+    "id": "nhd-144",
+    "name": "RV. Hospital",
+    "email": "nhd-144@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "25/7A, Thiruthuvapuram",
+    "lat": 8.3229621,
+    "lng": 77.1897131,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 39,
+      "occupied": 32,
+      "icu": 11,
+      "oxygen": 0
+    },
+    "blood": {
+      "A+": 7,
+      "A-": 14,
+      "B+": 21,
+      "B-": 28,
+      "O+": 5,
+      "O-": 12,
+      "AB+": 19,
+      "AB-": 26
+    }
+  },
+  {
+    "id": "nhd-145",
+    "name": "Devadhas Hospial",
+    "email": "nhd-145@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "84, Nithravilai & PO.",
+    "lat": 8.274179,
+    "lng": 77.1441883,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 70,
+      "occupied": 60,
+      "icu": 0,
+      "oxygen": 1
+    },
+    "blood": {
+      "A+": 8,
+      "A-": 15,
+      "B+": 22,
+      "B-": 29,
+      "O+": 6,
+      "O-": 13,
+      "AB+": 20,
+      "AB-": 27
+    }
+  },
+  {
+    "id": "nhd-146",
+    "name": "Francis Hospital",
+    "email": "nhd-146@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "23-151, Thoorhur & PO.",
+    "lat": 8.2668,
+    "lng": 77.1424985,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 101,
+      "occupied": 86,
+      "icu": 1,
+      "oxygen": 2
+    },
+    "blood": {
+      "A+": 9,
+      "A-": 16,
+      "B+": 23,
+      "B-": 0,
+      "O+": 7,
+      "O-": 14,
+      "AB+": 21,
+      "AB-": 28
+    }
+  },
+  {
+    "id": "nhd-147",
+    "name": "Poius Hospital",
+    "email": "nhd-147@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "29/3A, Nithiravilai",
+    "lat": 8.27368,
+    "lng": 77.144773,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 42,
+      "occupied": 38,
+      "icu": 2,
+      "oxygen": 3
+    },
+    "blood": {
+      "A+": 10,
+      "A-": 17,
+      "B+": 24,
+      "B-": 1,
+      "O+": 8,
+      "O-": 15,
+      "AB+": 22,
+      "AB-": 29
+    }
+  },
+  {
+    "id": "nhd-148",
+    "name": "St.Marys Hospital",
+    "email": "nhd-148@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "98, Nithiravilai",
+    "lat": 8.273096,
+    "lng": 77.1434695,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 73,
+      "occupied": 60,
+      "icu": 3,
+      "oxygen": 4
+    },
+    "blood": {
+      "A+": 11,
+      "A-": 18,
+      "B+": 25,
+      "B-": 2,
+      "O+": 9,
+      "O-": 16,
+      "AB+": 23,
+      "AB-": 0
+    }
+  },
+  {
+    "id": "nhd-149",
+    "name": "Meenambiga Hospital",
+    "email": "nhd-149@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "285/1B, Krishnankoil, Nagercoil",
+    "lat": 8.28896974,
+    "lng": 77.10791409,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 104,
+      "occupied": 94,
+      "icu": 4,
+      "oxygen": 5
+    },
+    "blood": {
+      "A+": 12,
+      "A-": 19,
+      "B+": 26,
+      "B-": 3,
+      "O+": 10,
+      "O-": 17,
+      "AB+": 24,
+      "AB-": 1
+    }
+  },
+  {
+    "id": "nhd-150",
+    "name": "Rita Hospital",
+    "email": "nhd-150@directory.carebridge.invalid",
+    "city": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "location": "221/F, Kollencode",
+    "lat": 8.2889764,
+    "lng": 77.1082252,
+    "type": "Others",
+    "verificationStatus": "public_directory",
+    "inventorySource": "simulated_demo",
+    "sourceUrl": "https://livingatlas.esri.in/server/rest/services/LivingAtlas/IND_Hospital_Directory/MapServer/0/query",
+    "beds": {
+      "total": 36,
+      "occupied": 30,
+      "icu": 8,
+      "oxygen": 17
+    },
+    "blood": {
+      "A+": 4,
+      "A-": 11,
+      "B+": 18,
+      "B-": 25,
+      "O+": 2,
+      "O-": 9,
+      "AB+": 16,
+      "AB-": 23
+    }
+  }
 ]
