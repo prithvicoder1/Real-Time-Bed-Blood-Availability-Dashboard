@@ -7,6 +7,7 @@
 An emergency capacity network for discovering hospital beds and blood inventory, forecasting near-term occupancy, registering facilities, and reviewing operational evidence.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Open_CareBridge-00a88f?style=for-the-badge)](https://carebridge-92bh.onrender.com/)
+[![Hospital Sign In](https://img.shields.io/badge/Hospital-Sign_In-00a88f?style=for-the-badge)](https://carebridge-92bh.onrender.com/#signin)
 [![API Health](https://img.shields.io/badge/API-Health_Check-b8ff4f?style=for-the-badge)](https://carebridge-92bh.onrender.com/api/health)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ed?style=for-the-badge&logo=docker&logoColor=white)](https://github.com/prithvicoder1/CareBridge/blob/main/backend/Dockerfile)
 [![Render](https://img.shields.io/badge/Deploy-Render-7656ff?style=for-the-badge&logo=render&logoColor=white)](https://render.com/deploy)
@@ -21,6 +22,8 @@ An emergency capacity network for discovering hospital beds and blood inventory,
 ## Live application
 
 **Production URL:** [https://carebridge-92bh.onrender.com/](https://carebridge-92bh.onrender.com/)
+
+**Hospital sign in:** [https://carebridge-92bh.onrender.com/#signin](https://carebridge-92bh.onrender.com/#signin)
 
 The deployed application provides one responsive interface for patients, hospitals, and network administrators. It currently loads 150 facility directory records and exposes its runtime state through [`/api/health`](https://carebridge-92bh.onrender.com/api/health).
 
@@ -56,7 +59,7 @@ The production Docker image builds the Vite frontend and serves it from Express.
 | --- | --- |
 | Frontend | Semantic HTML5, responsive CSS, dependency-free JavaScript, Vite |
 | API | Node.js, Express, JWT, bcrypt, Multer |
-| Database | PostgreSQL 17, JSONB inventory snapshots, `BYTEA` certificate storage |
+| Database | Neon PostgreSQL 18, JSONB inventory snapshots, `BYTEA` certificate storage |
 | Machine learning | Python, pandas, NumPy, scikit-learn, joblib |
 | NLP | Word and character TF-IDF with logistic regression and confidence fallback |
 | Infrastructure | Docker, Docker Compose, Render Blueprint |
@@ -140,10 +143,10 @@ The required columns, validation rules, and privacy expectations are documented 
 
 | Data | Local development | Render deployment |
 | --- | --- | --- |
-| Hospital accounts and profiles | PostgreSQL `postgres_data` volume | Managed `carebridge-db` PostgreSQL |
-| Bed and blood snapshots | PostgreSQL | Managed PostgreSQL |
-| Certificate files and metadata | PostgreSQL | Managed PostgreSQL |
-| Audit events | PostgreSQL | Managed PostgreSQL |
+| Hospital accounts and profiles | PostgreSQL `postgres_data` volume | Neon PostgreSQL |
+| Bed and blood snapshots | PostgreSQL | Neon PostgreSQL |
+| Certificate files and metadata | PostgreSQL | Neon PostgreSQL |
+| Audit events | PostgreSQL | Neon PostgreSQL |
 | Public directory seed | `backend/data/hospitals.json` | Docker image, seeded into PostgreSQL |
 | Trained model artifacts | `ml/` | Docker image |
 
@@ -153,15 +156,15 @@ Passwords are stored as bcrypt hashes. Certificate uploads are stored in Postgre
 
 The repository includes [`render.yaml`](render.yaml). To create the full free-tier preview stack:
 
-1. In Render, select **New → Blueprint**.
-2. Connect `prithvicoder1/CareBridge` and select `main`.
-3. Enter secure values for `ADMIN_EMAIL` and `ADMIN_PASSWORD`.
-4. Apply the Blueprint.
+1. Create a Neon PostgreSQL project and copy its pooled connection string.
+2. In Render, select **New → Blueprint** and connect `prithvicoder1/CareBridge` on `main`.
+3. Set `DATABASE_URL` to the Neon pooled connection string.
+4. Enter secure values for `ADMIN_EMAIL` and `ADMIN_PASSWORD`, then apply the Blueprint.
 
-The Blueprint creates the Docker web service and PostgreSQL database, generates `JWT_SECRET`, connects `DATABASE_URL`, runs the database schema automatically, and checks `/api/health`.
+The Blueprint creates the Docker web service, generates `JWT_SECRET`, uses the externally managed Neon database, runs the schema automatically, and checks `/api/health`.
 
 > [!NOTE]
-> Render free web services sleep after inactivity. Free Render PostgreSQL databases expire after 30 days and do not include backups. Upgrade or migrate the database before the deadline if the information must be retained.
+> Render free web services sleep after inactivity, so the first request after a quiet period can take approximately 50 seconds. The persistent database is hosted on Neon and is not tied to Render’s expiring free PostgreSQL instances.
 
 ## Quality checks
 
